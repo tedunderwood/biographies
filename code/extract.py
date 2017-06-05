@@ -9,13 +9,13 @@ start = int(sys.argv[1])
 end = int(sys.argv[2])
 
 def get_bios(start,end):
-'''
-Iterates over the specified rows of bioindex.tsv,
-gets the HathiTrust ID, and passes the file names to extract().
-'''
+    '''
+    Iterates over the specified rows of bioindex.tsv,
+    gets the HathiTrust ID, and passes the file names to extract().
+    '''
     # skip header
     header = 0
-    if start == header
+    if start == header:
         start = 1
 
     with open('/media/secure_volume/index/bioindex.tsv') as bios:
@@ -29,11 +29,11 @@ gets the HathiTrust ID, and passes the file names to extract().
             count += 1
 
 def extract(filename):
-'''
-Iterates over each volsplit zipfile, 
-searches for the passed filename in the contents, 
-extracts it into the holding folder.
-'''
+    '''
+    Iterates over each volsplit zipfile, 
+    searches for the passed filename in the contents, 
+    extracts it into the holding folder.
+    '''
     all_vols = [ vol for vol in os.listdir('/media/secure_volume/')
             if vol.startswith('volsplit') ]
 
