@@ -13,3 +13,8 @@ But two outstanding issues:
 (2) it seems to always produce lists of ten files
 (3) we probably need to build in a stage where it wipes the holding folder and
 (4) extracting files is slow, probably because we're reopening the zip archive
+
+June 6, 2017
+------------
+Added author genders to metadata/hathi_ic_biog.tsv,
+using [Gender-ID.py, by Bridget Baird and Cameron Blevins](https://github.com/cblevins/Gender-ID-By-Time)
