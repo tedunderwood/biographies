@@ -12,17 +12,17 @@ end = int(sys.argv[2])
 slice_path= sys.argv[3]
 
 def get_bios(start,end):
-'''
-Iterates over the specified rows of bioindex.tsv,
-gets the HathiTrust ID, and passes the file names to extract().
-'''
+    '''
+    Iterates over the specified rows of bioindex.tsv,
+    gets the HathiTrust ID, and passes the file names to extract().
+    '''
     # skip header
     header = 0
-    if start == header
+    if start == header:
         start = 1
 
     with open('/media/secure_volume/index/bioindex.tsv') as bios:
-        tsvreader = csv.reader(bios, delimeter='\t')
+        tsvreader = csv.reader(bios, delimiter='\t')
         count = 0
         for row in tsvreader:
             if (end >= count >= start):
@@ -32,11 +32,11 @@ gets the HathiTrust ID, and passes the file names to extract().
             count += 1
 
 def extract(filename):
-'''
-Iterates over each volsplit zipfile, 
-searches for the passed filename in the contents, 
-extracts it into the holding folder.
-'''
+    '''
+    Iterates over each volsplit zipfile, 
+    searches for the passed filename in the contents, 
+    extracts it into the holding folder.
+    '''
     all_vols = [ vol for vol in os.listdir('/media/secure_volume/')
             if vol.startswith('volsplit') ]
 
@@ -44,13 +44,13 @@ extracts it into the holding folder.
         with zipfile.ZipFile('/media/secure_volume/'+folder, 'r') as myzip:
             if filename in myzip.namelist():
                 # print('file=', name)
-                myzip.extract(name, '..holding_folder')
+                myzip.extract(filename, '..holding_folder')
 
 def slicer(outfile):
     idx_file_path = '/media/secure_volume/index/bioindex.tsv'
     holding_folder_path = '/media/secure_volume/holding_folder/'
     bio_idx_df = pd.read_table(idx_file_path)
-    bio_idx_df.set_index('mainid')
+    bio_idx_df.set_index('mainid', inplace = True)
     mainid_list = [vol for vol in os.listdir(holding_folder_path) if vol.endswith('.zip')]
     # print(mainid_list)
     mainid_list_clean = [item[0:-4] for item in mainid_list]
