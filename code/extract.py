@@ -22,7 +22,7 @@ def get_bios(start,end):
         start = 1
 
     with open('/media/secure_volume/index/bioindex.tsv') as bios:
-        tsvreader = csv.reader(bios, delimeter='\t')
+        tsvreader = csv.reader(bios, delimiter='\t')
         count = 0
         for row in tsvreader:
             if (end >= count >= start):
@@ -44,13 +44,13 @@ def extract(filename):
         with zipfile.ZipFile('/media/secure_volume/'+folder, 'r') as myzip:
             if filename in myzip.namelist():
                 # print('file=', name)
-                myzip.extract(name, '..holding_folder')
+                myzip.extract(filename, '..holding_folder')
 
 def slicer(outfile):
     idx_file_path = '/media/secure_volume/index/bioindex.tsv'
     holding_folder_path = '/media/secure_volume/holding_folder/'
     bio_idx_df = pd.read_table(idx_file_path)
-    bio_idx_df.set_index('mainid')
+    bio_idx_df.set_index('mainid', inplace = True)
     mainid_list = [vol for vol in os.listdir(holding_folder_path) if vol.endswith('.zip')]
     # print(mainid_list)
     mainid_list_clean = [item[0:-4] for item in mainid_list]
