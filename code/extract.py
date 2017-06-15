@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# TESTING
 
 import sys
 import os
@@ -23,7 +22,8 @@ os.mkdir(holding_path)
 def extract(start,end):
     '''
     Iterates over the specified rows of bioindex.tsv,
-    gets the HathiTrust ID, and passes the file names to extract().
+    finds the volsplit.zip location and extracts the file
+    into secure_volume/holding_folder.
     '''
     # skip header
     header = 0
