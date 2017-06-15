@@ -1,9 +1,9 @@
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('../metadata/hathi_ic_biog.tsv', sep='\t')
+df = pd.read_csv('~/biographies/metadata/hathi_ic_biog.tsv', sep='\t')
 
-def make_balanced_df(df):
+def make_balanced(df):
     balanced_df = pd.DataFrame()
     for yr in np.arange(1923,2001):
         for gender in ['F','M','U']:
@@ -18,4 +18,4 @@ def make_balanced_df(df):
 
 balanced_df = make_balanced(df)
 
-balanced_df.to_csv('/media/secure_volume/balanced.tsv', index=False, sep='\t')
+balanced_df.to_csv('/media/secure_volume/meta/balanced_hathi_ic_biog.tsv', index=False, sep='\t')
