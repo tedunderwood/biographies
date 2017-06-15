@@ -9,15 +9,15 @@ Merged extract and slicer
 Installed git on the DC  
 Edited extract.py so that it runs on the DC  
 But two outstanding issues:  
-(1) it's designed to run in the secure volume and
-(2) it seems to always produce lists of ten files
-(3) we probably need to build in a stage where it wipes the holding folder and
-(4) extracting files is slow, probably because we're reopening the zip archive
+1. it's designed to run in the secure volume and
+2. it seems to always produce lists of ten files
+3. we probably need to build in a stage where it wipes the holding folder and
+4. extracting files is slow, probably because we're reopening the zip archive
 
 #### Natalie
 installed Vim and configured .vimrc for use with arrows, backspace, etc  
-installed pip for python3 and set up pip3 environment variables  
-+ use `pip3 install <package>` to use with python3  
+installed pip for python3 and set up pip3 environment variables
++ use `pip3 install <package>` to use with python3
 installed pandas, numpy, zipfile, ipython, matplotlib for python3  
 
 
@@ -40,4 +40,12 @@ June 14, 2017
 -------------
 #### Natalie
 Figuring out how to push to remote under collaborator username  
-Wrote balance_data.py that subsets hathi_ic_biog.tsv with 50 Female, 50 Male, and 25 Unknown author genders for each year (1923-2000)   
+Wrote balance_data.py that subsets hathi_ic_biog.tsv with 50 Female, 50 Male, and 25 Unknown author genders for each year (1923-2000)
++ outputs to /media/secure_volume/balanced_hathi_ic_biog.tsv
+ 
+June 15, 2017
+-------------
+#### Natalie
+Wrote extract_balanced.py, which is a version of extract.py that takes an <infile> and <outfile> as arguments. The infile is the dataset of files that we want (output file from balance_data.py). It gets the volsplit locations from bioindex.tsv and writes the slice file with bio IDs and paths at the <outfile> location.
++ need to investigate why only 9413 files were moved to the holding_folder, of the 9725 rows in balanced_hathi_ic_biog.tsv. Probably an issue with how I am merging with bioindex.tsv
++ improve speed somehow? it took about 10 minutes to run. a way to open each volsplit only once when extracting?
