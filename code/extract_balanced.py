@@ -74,5 +74,5 @@ def slicer(outfile):
 
     print("Wrote", len(slice_df), "rows to", outfile)
 
-extract(start, end)
+extract(infile)
 slicer(outfile)
