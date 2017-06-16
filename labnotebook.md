@@ -49,3 +49,23 @@ June 15, 2017
 Wrote extract_balanced.py, which is a version of extract.py that takes an <infile> and <outfile> as arguments. The infile is the dataset of files that we want (output file from balance_data.py). It gets the volsplit locations from bioindex.tsv and writes the slice file with bio IDs and paths at the <outfile> location.
 + need to investigate why only 9413 files were moved to the holding_folder, of the 9725 rows in balanced_hathi_ic_biog.tsv. Probably an issue with how I am merging with bioindex.tsv
 + improve speed somehow? it took about 10 minutes to run. a way to open each volsplit only once when extracting?
+
+June 16, 2017
+-------------
+#### Natalie
+Changed balance_data.py to merge bioindex.tsv with hathi_ic_biog.tsv first, so that all IDs will match and we don't have any NaN volsplit file locations (filesuffix)  
+Now takes a command line argument of where to save the outfile (.tsv) 
+Prints out year and author gender if less than 50 rows are found
++ my test outfile is saved at /secure_volume/meta/balanced_hathi_ic_biog.tsv
++ 9712 rows total. 50 M, 50 F, 25 U for each imprintdate year, except:
+  + 1923-F - 41 rows
+  + 1925-F - 42 rows
+  + 1926-F - 46 rows
+  + 1940-F - 49 rows
+  + 1941-F - 42 rows
+  + 1944-F - 42 rows
+   
+Changed extract_balanced.py to iterate over each volsplit file and extract all the necessary files, so each volsplit is opened only once  
+Tested that it outputs correct number of lines (9712) to the given outfile
++ my test outfile is at /secure_volume/natalie/outfile.txt
++ much faster now, runs in 1:30
