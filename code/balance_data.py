@@ -1,5 +1,8 @@
 import pandas as pd
 import numpy as np
+import sys
+
+outfile = sys.argv[1]
 
 bio_df = pd.read_csv('~/biographies/metadata/hathi_ic_biog.tsv', sep='\t')
 
@@ -31,4 +34,6 @@ def make_balanced(df):
 
 balanced_df = make_balanced(merge_bioindex)
 
-balanced_df.to_csv('/media/secure_volume/meta/2balanced_hathi_ic_biog.tsv', index=False, sep='\t')
+balanced_df.to_csv(outfile, index=False, sep='\t')
+
+print(balanced_df.shape[0], 'rows written to', outfile)

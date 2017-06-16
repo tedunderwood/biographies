@@ -27,29 +27,19 @@ def extract(infile):
     
     bioindex = pd.read_csv('/media/secure_volume/index/bioindex.tsv', sep='\t')
     balanced_bioindex = pd.read_table(infile)
-#    in_df = pd.read_table(infile)
-   
-#    balanced_bioindex = pd.merge(
-#        in_df, bioindex,
-#        how='left',
-#        left_on='docid',
-#        right_on='htid').loc[
-#        :,['mainid','htid','filesuffix']
-#        ]
 
-    for idx, row in balanced_bioindex.iterrows():
-        filename = row['mainid']+'.zip'
-        volsplit_file = 'volsplit'+row['filesuffix']+'.zip'
-        print(filename, volsplit_file)
-
+    for suffix in balanced_bioindex.filesuffix.unique():
+        volsplit_file = 'volsplit'+str(suffix)+'.zip'
+        volsplit_df = balanced_bioindex.loc[balanced_bioindex.filesuffix == suffix,:]
         try:
             with zipfile.ZipFile('/media/secure_volume/'+volsplit_file, 'r') as myzip:
-                #print(filename, 'found in:', myzip.filename)
-                myzip.extract(filename, '/media/secure_volume/holding_folder')
+                for idx, row in volsplit_df.iterrows():
+                    filename = row['mainid']+'.zip'
+                    myzip.extract(filename, '/media/secure_volume/holding_folder')
+
         except Exception as e:
             print('ERROR:',filename,'not found in',volsplit_file,'!', e)
-
-
+    
 def slicer(outfile):
     idx_file_path = '/media/secure_volume/index/bioindex.tsv'
     holding_folder_path = '/media/secure_volume/holding_folder/'
