@@ -12,9 +12,7 @@ merge_bioindex = pd.merge(
     bio_df, bioindex,
     how='inner',
     left_on='docid',
-    right_on='htid').loc[
-    :,['infer_date','authgender','mainid','htid','filesuffix']
-    ]
+    right_on='htid')
 
 # date functions taken from https://github.com/tedunderwood/library/blob/master/SonicScrewdriver.py
 def infer_date(datetype, firstdate, seconddate, textdate):
@@ -89,7 +87,7 @@ def make_balanced(df):
     balanced_df = pd.DataFrame()
     for yr in np.arange(1923,2001):
         for gender in ['F','M','U']:
-            subset_df = df.loc[(df.infer_date == str(yr)) & (df.authgender == gender),:]
+            subset_df = df.loc[(df.infer_date == yr) & (df.authgender == gender),:]
             df_shape = subset_df.shape
             if gender == 'U':
                 subset_df = subset_df.head(25)
@@ -107,7 +105,7 @@ for row in merge_dict:
     row['infer_date'] = date_row(row)
 
 new_bioindex = pd.DataFrame()
-new_bioindex.from_records(df_dict)
+new_bioindex = new_bioindex.from_records(merge_dict)
 
 # create gender-balanced subset df
 balanced_df = make_balanced(new_bioindex)

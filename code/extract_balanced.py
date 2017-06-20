@@ -58,10 +58,10 @@ def slicer(outfile):
     slice_df = pd.DataFrame(htid_series)
     slice_df['path'] = file_path_list
     slice_df['c'] = 0
-    slice_df['d'] = 10001
+    slice_df['d'] = 1001
 
     with open(outfile, 'w') as outf:
-        slice_df.to_csv(outfile, sep='\t', header=False)
+        slice_df.to_csv(outfile, sep='\t', header=False, index=False)
 
     print("Wrote", len(slice_df), "rows to", outfile)
 
