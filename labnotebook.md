@@ -69,3 +69,16 @@ Changed extract_balanced.py to iterate over each volsplit file and extract all t
 Tested that it outputs correct number of lines (9712) to the given outfile
 + my test outfile is at /secure_volume/natalie/outfile.txt
 + much faster now, runs in 1:30
+
+June 20, 2017
+-------------
+#### Ted
+Rewrote the PagesToCharacters class that serves as a wrapper for David's BookNLP, letting it use zip files that contain a lot of page files.
+
+To generate the new .jar I futzed around a bit. Finally edited the src in javaworkspace/book-nlp which is confusingly filed under the project "narrative" in Eclipse.
+
+I produced a "Runnable JAR" for the whole narrative project.
+
+This worked, but I'm not sure it was necessary. A much smaller non-runnable jar was probably what I had in place, and it had worked fine, given that the libraries are present and on the classpath.
+
+
