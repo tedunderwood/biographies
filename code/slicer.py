@@ -4,8 +4,14 @@ import pandas as pd
 import glob
 import numpy as np
 import os
+import sys
 
-def slicer(outfile, slices):
+
+infile = sys.argv[1]
+outfile = sys.argv[2]
+nslices = int(sys.argv[3])
+
+def slicer(infile, outfile, slices):
     
     '''
     Takes an output filename (including extension) and number of output files ('slices') as parameters,
@@ -13,22 +19,11 @@ def slicer(outfile, slices):
     and '10001' populated. Part of the biography BookNLP workflow.
     '''
     
-    idx_file_path = '/media/secure_volume/index/bioindex.tsv'
-    holding_folder_path = '/media/secure_volume/holding_folder/'
-    bio_idx_df = pd.read_table(idx_file_path)
-    bio_idx_df.set_index('mainid', inplace = True)
-    mainid_list = [vol for vol in os.listdir(holding_folder_path) if vol.endswith('.zip')]
-    # remove '.zip' from file names
-    mainid_list_clean = [item[0:-4] for item in mainid_list]
-
-    #subset bioindex on holding_folder IDs
-    htid_series = bio_idx_df.htid[mainid_list_clean]
-    file_path_list = glob.glob(holding_folder_path+'*.zip')
-    # print('file path list has: ',len(file_path_list))
-    # print('htid_list has', len(htid_list))
-    
-    slice_df = pd.DataFrame(htid_series)
-    slice_df['path'] = file_path_list
+    balanced_df = pd.read_csv(infile, sep='\t')   
+     
+    slice_df = pd.DataFrame(balanced_df.loc[:,['htid','mainid']])
+    # add path column
+    slice_df['mainid'] = '/media/secure_volume/holding_folder/'+slice_df['mainid']+'.zip' 
     slice_df['c'] = 0
     slice_df['d'] = 10001
     
@@ -41,9 +36,10 @@ def slicer(outfile, slices):
         filename = outfile[:-4]
         file_num = str(out_num)
         outfile_name = (filename+'_'+file_num+extension)
-        with open (outfile_name, 'w') as outf:
-            slce.to_csv(outf, sep='\t', header=False)
+        slce.to_csv(outfile_name, sep='\t', header=False, index=False)
         if out_num != (slices-1):
             out_num += 1
         
         print("Wrote", len(slce), "rows to", outfile_name)
+
+slicer(infile, outfile, nslices)
