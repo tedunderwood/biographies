@@ -81,4 +81,16 @@ I produced a "Runnable JAR" for the whole narrative project.
 
 This worked, but I'm not sure it was necessary. A much smaller non-runnable jar was probably what I had in place, and it had worked fine, given that the libraries are present and on the classpath.
 
+#### Natalie
+Updated the balance data script to include the date functions from previous work done at: https://github.com/tedunderwood/library/blob/master/SonicScrewdriver.py   
+Messed around with restructuring scripts and extracting everything to holding folder
 
+
+June 22, 2017
+-------------
+#### Natalie
+Changed the extractor (now extract.py) to extract all bio files into the holding folder, so we won't have to redo this step every time the data changes  
++ this was done by merging hathi_ic_biog.tsv and bioindex.tsv
++ all shared hathitrust IDs with volsplit locations were extracted
+Merged with Ryan's code so that slicer.py takes 3 command line args: <infile> <outfile> <number of slices>  
+Tested the three scripts (extract.py, balance_data.py, slicer.py) are working on the data capsule  
