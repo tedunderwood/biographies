@@ -93,4 +93,10 @@ Changed the extractor (now extract.py) to extract all bio files into the holding
 + this was done by merging hathi_ic_biog.tsv and bioindex.tsv
 + all shared hathitrust IDs with volsplit locations were extracted
 Merged with Ryan's code so that slicer.py takes 3 command line args: <infile> <outfile> <number of slices>  
-Tested the three scripts (extract.py, balance_data.py, slicer.py) are working on the data capsule  
+Tested the three scripts (extract.py, balance_data.py, slicer.py) are working on the data capsule 
+
+June 26, 2017
+-------------
+#### Ted
+Added several files to /code that I've used in the past to extract characters as strings from json files.
+Also added 19andchicagoficmeta.csv to /metadata, and VariantSpellings.txt to /lexicons. These files are used in extracting characters. 
