@@ -21,7 +21,7 @@ for hold_item in hold_list:
     clean_hold_list.append(hold_item_name)
 
 for check_item in clean_hold_list:
-    if check_item in clean_copied_list:
+    if check_item in clean_cop_list:
         continue
     else:
         miss_list.append(check_item)
