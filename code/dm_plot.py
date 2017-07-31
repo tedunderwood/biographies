@@ -1,4 +1,11 @@
 def dm_plot(diff_matrix_name_path, term1, term2=None, term3=None, term4=None, term5=None):
+
+    '''
+    Generates a plot of term differences between male and female characters, over time,
+    from a path and filename for a term difference matrix and up to 5 terms. Difference
+    is only plotted for occurences after 1800.
+    '''
+
     import pandas as pd
     import matplotlib.pyplot as plt
     import seaborn as sns
