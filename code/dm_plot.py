@@ -1,4 +1,4 @@
-def dm_plot(diff_matrix_name_path, term1, term2=None, term3=None, term4=None, term5=None):
+def dm_plot(diff_matrix_name_path, term1, term2=None, term3=None, term4=None, term5=None, outfile_name=None):
     import pandas as pd
     import matplotlib.pyplot as plt
     import seaborn as sns
@@ -35,6 +35,8 @@ def dm_plot(diff_matrix_name_path, term1, term2=None, term3=None, term4=None, te
     plt.ylabel('Difference')
     plt.xlabel('Year')
     sns.set_context('poster')
-    outfile_name = input('Enter filename for figure to be saved as ')
-    plt.savefig(outfile_name + '.png')
+
+    if outfile_name != None:
+        plt.savefig(outfile_name + '.png')
+        
     plt.show()
