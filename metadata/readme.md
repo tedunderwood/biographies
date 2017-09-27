@@ -10,3 +10,5 @@ This was produced by scrape_json.py in [the DataMunging/HathiMetadata repo,](htt
 **20cbiographyHTids.txt** is a stripped-down list of just the HT volume ids from the same file.
 
 **pre23biometa.tsv** is analogous metadata for biographies in the public-domain part of Hathi.
+
+**alreadyhavebio.txt** is a list of the volumes actually present on the cluster in /chardata.
