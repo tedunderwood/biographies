@@ -2,15 +2,29 @@
 
 # USAGE:
 
-# python3 make_logratio_matrix.py name_of_outfile pathtodata1 pathtodata2 etc
+# python3 make_logratio_matrix.py vocablength metadata_file name_of_outfile pathtodata1 pathtodata2 etc
 
 # this is written to produce
 # a matrix of Laplace-smoothed log ratios; i.e.,
-# log( (word_uses_for_women + 1 / all_words_for_women) / (word_uses_for_men + 1 / all_words_for_men) )
+# log( (word_uses_for_women + 1 / all_words_for_women) /
+#      (word_uses_for_men + 1 / all_words_for_men)
+#    )
+
+# It is also written to ensure that we have the same number of characters
+# created by women and created by men in each year, and the same number
+# of characters-per-year across the timeline.
+
+# In order to do this it requires a metadata_file listing
+# the HTvolume ID, inferred publication date, and author gender
+# for each volume.
+
+# Example of usage:
+# make_logratio_matrix2.py 6000 null new_bio_logratio.csv ../natalie/out_files/all_pre23bio_new.tsv ../natalie/out_files/all_post23bio_Sep11.tsv
 
 VOCABLENGTH = 6000
+N = 3000
 
-import csv, sys, os
+import csv, sys, os, random
 import numpy as np
 import pandas as pd
 import math
@@ -23,19 +37,37 @@ csv.field_size_limit(sys.maxsize)
 
 arguments = sys.argv
 
-out_filename = arguments[1]
+if len(arguments) < 5:
+    print('This module requires command-line args to run. In order:')
+    print(' vocablength: integer size of vocabulary retained')
+    print(' metadata_file: csv listing volID, pubdate, and authgender')
+    print(' outfile: filename to write')
+    print(' datafiles: all subsequent args will be interpreted as sources')
+    sys.exit(0)
+
+VOCABLENGTH = int(arguments[1])
+
+metadata_path = arguments[2]
+if not os.path.isfile(metadata_path):
+    print('I cannot find ' + metadata_path)
+    print('This will be okay if the data itself contains authgender.')
+else:
+    metadata = pd.read_csv(metadata_path)
+
+out_filename = arguments[3]
 if os.path.isfile(out_filename + '.csv'):
     print(out_filename + ' already exists, and I refuse to overwrite it.')
+    sys.exit(0)
 
 files_to_use = []
-for f in arguments[2:]:
+for f in arguments[4:]:
     if os.path.isfile(f):
         files_to_use.append(f)
     else:
         print("Cannot find " + f)
 
-# Let's load some metadata about the publication dates of these works,
-# and the inferred genders of their authors.
+# We need a lexicon of personal names, to keep those out of our
+# vocabulary. Obviously, they'll be gendered!
 
 personalnames = set()
 with open("../lexicons/PersonalNames.txt", encoding="utf-8") as f:
@@ -46,28 +78,114 @@ for line in names:
     personalnames.add(name)
     personalnames.add('said-' + name)
 
-vocab = Counter()
+# Okay, here's the core logic of this module. We need to do five things:
+# 1) Create a grid of all characters by authgender and publication date
+# 2) Select (with replacement!) an equal number of characters from each
+#    cell of that grid.
+# 3) Make a vocabulary based on the most common words among those characters.
+# 4) Sum up vocab words from actually-selected characters.
+# 5) Calculate logratios between usage by masculine and feminine chargenders.
 
-def add2vocab(vocab, filepath):
+# This sequence is fastest/easiest if we do everything in memory, and I *think*
+# that's possible.
+
+def initialize_grid():
+    grid = dict()
+    for i in range (1780, 2008):
+        grid[i] = dict()
+        for g in ['f', 'm']:
+            grid[i][g] = []
+
+    return grid
+
+def fill_grid(filepath, grid, wordsdict, genderdict):
+    '''
+    We build three underlying data structures.
+    1) A dictionary of character ids by year and authgender,
+    2) a dictionary where character-id keys point to wordlists.
+    3) a dictionary where character-id keys point to chargenders.
+    '''
+
     with open(filepath, encoding = 'utf-8') as f:
         reader = csv.DictReader(f, delimiter = '\t')
         for row in reader:
             if 'chargender' in row:
-                gender = row['chargender']
+                chargender = row['chargender']
             else:
-                gender = row['gender']
+                chargender = row['gender']
 
-            if gender.startswith('u'):
+            if chargender.startswith('u'):
                 continue
-            words = row['words'].split()
-            for w in words:
-                if not w.startswith('said-') and w not in personalnames:
-                    vocab[w] += 1
+                # for purposes of this calculation we are
+                # excluding characters of unknown gender
+
+            if 'authgender' in row:
+                authgender = row['authgender']
+            else:
+                docid = row['docid']
+                if docid in metadata.index:
+                    authgender = metadata.loc[docid, 'authgender']
+                else:
+                    continue
+
+            if authgender != 'm' and authgender != 'f':
+                continue
+
+            pubdate = int(row['pubdate'])
+            if pubdate < 1780 or pubdate > 2007:
+                continue
+            charid = row['charid']
+
+            grid[pubdate][authgender].append(charid)
+            genderdict[charid] = chargender
+            wordsdict[charid] = row['words'].split()
+
+    # no return values are needed, because the parameters
+    # are mutable and have been mutated!
+
+def select_chars(grid, n):
+    selected = initialize_grid()
+
+    for y in range (1780, 2008):
+        for g in ['f', 'm']:
+            options = grid[y][g]
+            if len(options) < 1:
+                continue
+
+            for n1 in range(n):
+                selected[y][g].append(random.choice(options))
+
+    return selected
+
+def make_vocab(selected, wordsdict, vocab):
+    for y in range (1780, 2008):
+        for g in ['f', 'm']:
+            for c in selected[y][g]:
+                words = wordsdict[c]
+                for w in words:
+                    if not w.startswith('said-') and w not in personalnames:
+                        vocab[w] += 1
+
+# Let's make the grid.
+
+grid = initialize_grid()
+wordsdict = dict()
+genderdict = dict()
+
+for f in files_to_use:
+    fill_grid(f, grid, wordsdict, genderdict)
+
+print('Characters read from file.')
+
+selected = select_chars(grid, N)
+
+print('Characters selected.')
 
 # Let's create the vocabulary.
 
-for f in files_to_use:
-    add2vocab(vocab, f)
+vocab = Counter()
+
+make_vocab(selected, wordsdict, vocab)
 
 vocabcount = len(vocab)
 print("The data includes " + str(vocabcount) + " words")
@@ -82,7 +200,6 @@ for idx, word in enumerate(wordsinorder):
     vocabset.add(word)
 print("Vocabulary sorted, top " + str(VOCABLENGTH) + " kept.")
 
-
 vecbyyear = dict()
 vecbyyear['m'] = dict()
 vecbyyear['f'] = dict()
@@ -92,32 +209,16 @@ for g in ['f', 'm']:
     for i in range(1780, 2008):
         vecbyyear[g][i] = np.zeros((VOCABLENGTH))
 
-def add2counts(vecbyyear, path):
-    with open(path, encoding = 'utf-8') as f:
-        reader = csv.DictReader(f, delimiter = '\t')
-        for row in reader:
-            if 'chargender' in row:
-                gender = row['chargender']
-            else:
-                gender = row['gender']
+# Now we actually count words
 
-            if gender.startswith('u'):
-                continue
-
-            date = int(row['pubdate'])
-            if date < 1780 or date > 2008:
-                continue
-
-            words = row['words'].split()
+for y in range (1780, 2008):
+    for g in ['f', 'm']:
+        for c in selected[y][g]:
+            words = wordsdict[c]
             for w in words:
                 if w in vocabset:
                     idx = vocabulary[w]
-                    np.add.at(vecbyyear[gender][date], idx, 1)
-
-# Let's actually count words.
-
-for f in files_to_use:
-    add2counts(vecbyyear, f)
+                    np.add.at(vecbyyear[g][y], idx, 1)
 
 def dunnings(vectora, vectorb):
     assert len(vectora) == len(vectorb)
@@ -327,6 +428,25 @@ with open('../data/' + out_filename + '.slopes.csv', mode = 'w', encoding = 'utf
     writer.writeheader()
     for row in outrows:
         writer.writerow(row)
+
+with open('../data/' + out_filename + '.gendersums.tsv', mode = 'w', encoding = 'utf-8') as f:
+    f.write('year\twomenbywomen\tmenbywomen\twomenbymen\tmenbymen\n')
+    for y in range (1780, 2008):
+        chargenders = dict()
+        for authorgender in ['m', 'f']:
+            chargenders[authorgender] = dict()
+            chargenders[authorgender]['m'] = 0
+            chargenders[authorgender]['f'] = 0
+            for c in selected[y][authorgender]:
+                chargen = genderdict[c]
+                chargenders[authorgender][chargen] += 1
+
+        outline = '\t'.join([str(x) for x in [y, chargenders['f']['f'], chargenders['f']['m'], chargenders['m']['f'], chargenders['m']['m']]])
+        f.write(outline + '\n')
+
+
+
+
 
 
 
