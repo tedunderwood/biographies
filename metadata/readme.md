@@ -12,3 +12,5 @@ This was produced by scrape_json.py in [the DataMunging/HathiMetadata repo,](htt
 **pre23biometa.tsv** is analogous metadata for biographies in the public-domain part of Hathi.
 
 **alreadyhavebio.txt** is a list of the volumes actually present on the cluster in /chardata.
+
+**balanced_character_subset.csv** lists volumes used for modeling, contained on the cluster in character_subset.
