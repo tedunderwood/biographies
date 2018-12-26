@@ -1,26 +1,30 @@
 Preregistered hypotheses about characters
 =========================================
 
-A set of hypotheses we're using to confirm that the character-spaces extracted computationally from books bear some relation to human intuitions about character.
+A set of 84 hypotheses we're using to confirm that the character-spaces extracted computationally from books bear some relation to human intuitions.
 
-Some of these hypotheses are drawn from hypotheses about nineteenth-century fiction used in Bamman et al. 2014. They have been enlarged to cover twentieth-century fiction.
+Some of these are drawn from twenty-nine hypotheses about nineteenth-century fiction used in Bamman et al. 2014. That original set has been enlarged, especially to cover twentieth-century fiction.
 
-Each of the hypotheses affirms that a pair of characters should be more similar to each other than either of them is to a third character we call the "distractor." Each hypothesis defines two separate tests: either of the characters in the original pair could fail the test by appearing to resemble the distractor.
+Each of the hypotheses affirms that a pair of characters should be more similar to each other than either of them is to a third character we call the "distractor." Each hypothesis thus defines two separate tests, since either (or both) of the characters in the original pair could violate the hypothesis by having a strong resemblance to the distractor.
 
-It may be helpful to begin with a few words about the logic
+We have defined the hypotheses to cover several different ways two characters might be understood as "similar." 
 
-We have defined the hypotheses to cover several different ways two characters might be understood as "similar." First, instances of *the same character* who recur in different volumes of a series (e.g. Sherlock Holmes or Tarzan) obviously ought to resemble each other. Secondly, *genres define recurring roles* that readers understand as structurally similar: the "detective," "murderer," or "victim" in a mystery, for instance. Different instances of those roles ought to resemble each other. Third and finally, we can reason about characters as if they were real people, and frame hypotheses about various kinds of *social resemblance:* similarities in social position, profession, age, and gender. Since structural roles may not be strongly defined in realist novels, these naively "realistic" hypotheses are sometimes the only ones we can make there.
+1. First, instances of *the same character* who recur in different volumes of a series (e.g. Sherlock Holmes or Tarzan) obviously ought to resemble each other. 
 
-These forms of resemblance are likely to be complicated or obscured by several factors outside the story-world. The passage of *historical time* introduces lexical differences between books. *Authors* are also very powerful conditioning factors: the villains written by author X might even seem to resemble heroes written by the same author.
+2. Secondly, *genres define recurring roles* that readers understand as structurally similar: the "detective," "murderer," or "victim" in a mystery, for instance. Different instances of those roles ought to resemble each other. 
 
-Human beings are able to (partly) factor out these formal and lexical factors when they reason about fictional characters, and we postulate that a good computational model of character will do the same thing. So our more ambitious hypotheses are designed to test a model's ability to recognize structural or social similarity in spite of differences of authorship and the passage of historical time.
+3. Third and finally, we can reason about characters as if they were real people, and frame hypotheses about various kinds of *social resemblance:* similarities in social position, profession, age, and gender. Since structural roles may not be strongly defined in realist novels, these naively realistic hypotheses are sometimes the only ones we can make about those works.
 
-We list hypotheses from easy to hard, guided by the assumption that resemblance will be easiest to detect when several forms of resemblance align (two detectives who are also British men), and harder to detect when forces are working against each other (does Miss Marple resemble Nero Wolfe more than she resembles a murderess written by Agatha Christie?) We admit that human readers themselves may be uncertain about some of the most ambitious hypotheses.
+These forms of resemblance are likely to be complicated or obscured by several factors outside the story-world. The passage of *historical time* introduces lexical differences between books. *Authors* are also very powerful conditioning factors: the villains written by author X might even seem to resemble heroes written by the same author. Finally, *point of view* is a powerful factor that we haven't modeled explicitly; it's not obvious that our model will be capable of recognizing that a first-person narrator resembles any character who isn't also a first-person narrator.
+
+Human beings are able to (partly) factor out these formal and lexical factors when they reason about fictional characters, and we postulate that a good computational model of character will do the same thing. So our more ambitious hypotheses are designed to test a model's ability to recognize structural or social similarities between imaginary personages, even when the linguistic medium is transformed by authorship and historical period.
+
+We list hypotheses roughly from easy to hard, guided by the assumption that resemblance will be easiest to detect when several forms of resemblance align (comparing two male detectives written by the same author), and harder to detect when different social categories are working against each other (does Miss Marple, written by Agatha Christie, resemble Nero Wolfe, written by Rex Stout?) We also acknowledge that human readers themselves will be doubtful about some of the more ambitious hypotheses. We have tried to emphasize relatively clear forms of similarity, but we also wanted to toss in a few challenging/debatable questions, in order to make our models "stretch," and find out where they fail--even if those areas of "failure" turn out to be areas where human readers also disagree.
 
 Instances of the same character, easy cases
 --------------------------------------------
 
-1. Sherlock Holmes, in *The Adventures of Sherlock Holmes,* resembles Holmes in *The Sign of Four* (Conan Doyle) more than either character resembles Bill Sikes in *Oliver Twist* (Dickens).
+1. Sherlock Holmes, in *The Adventures of Sherlock Holmes,* resembles Holmes in *The Sign of Four* (Conan Doyle) more than either character resembles the brutal Bill Sikes in *Oliver Twist* (Dickens).
 
 2. Sherlock Holmes, in *The Adventures of Sherlock Holmes,* resembles Holmes in *The Valley of Fear* (Conan Doyle) more than either character resembles Carrie Meeber in *Sister Carrie* (Dreiser).
 
@@ -87,6 +91,8 @@ Resemblances within the same author, distractor from inside
 Structural resemblances across authors, distractor from outside
 ---------------------------------------------------------------
 
+Genre fiction plays a big role here, because it tends to lean on clear structural patterns: e.g., there's usually a murderer, a murder victim, and a detective.
+
 28. Gandalf, wizard in *The Return of the King* (Tolkien), resembles Merlyn, wizard in *The Sword in the Stone* (T. H. White), more than either resembles Ruthie Joad, reckless child from *The Grapes of Wrath* (Steinbeck).
 
 29. Rhett Butler, devil-take-care love interest in *Gone with the Wind* (Mitchell), resembles Lord Damerel, devil-take-care love interest in *Venetia* (Heyer), more than either resembles Jim Casy, former preacher in *The Grapes of Wrath* (Steinbeck).
@@ -117,7 +123,7 @@ Structural resemblances across authors, distractor from outside
 
 42. Ralph Rover, narrator of *The Coral Island* (R. M. Ballantyne), resembles William, the narrator of *Swiss Family Robinson* (J. D. Wyss, in translation) more than either character resembles Long John Silver in *Treasure Island* (R. L. Stevenson). (A fairly straightforward case, since the first two books are Robinsonades, and the third isn’t, in spite of its island setting.)
 
-43. Montoni in *Mysteries of Udolpho* (Radcliffe) resembles Heathcliff in *Wuthering Heights* (Emily Brontë) more than either character resembles Mr Bennet in *Pride and Prejudice.* (Another case where we’re testing our model’s ability to discern similarities across time. Montoni and Heathcliff are both cruel, proud, tormented figures who get called “Gothic” or “Byronic,” although Heathcliff is more sympathetic. Mr Bennet is nothing like them morally, but he is intermediate between them in time; if the model cares too deeply about period diction, it might be thrown off.)
+43. Montoni in *Mysteries of Udolpho* (Radcliffe) resembles Heathcliff in *Wuthering Heights* (Emily Brontë) more than either character resembles Mr Bennet in *Pride and Prejudice.* (Montoni and Heathcliff are both cruel, proud, tormented figures who get called “Gothic” or “Byronic,” although Heathcliff is more sympathetic. Mr Bennet is nothing like them morally, but he is intermediate between them in time.)
 
 Social resemblance across authors, distractor from outside
 ----------------------------------------------------------
@@ -136,7 +142,7 @@ The dividing line between "structural" and "social" resemblance is blurry; many 
 
 49. Carrie Meeber, working-class (rising) protagonist of *Sister Carrie* (Dreiser), resembles Jurgis Rudkus, working-class protagonist of *The Jungle* (Sinclair), more than either resembles Tarzan, in *Tarzan the Untamed* (Burroughs).
 
-50. Trilby, performer and tragic ingenue of *Trilby* (Du Maurier), resembles *Sibyl Vane*, performer and tragic ingenue of *Dorian Gray*, more than either resembles Madame Merle in *Portrait of a Lady* (James).
+50. Trilby, performer and tragic ingenue of *Trilby* (Du Maurier), resembles Sibyl Vane, performer and tragic ingenue of *Dorian Gray*, more than either resembles Madame Merle in *Portrait of a Lady* (James).
 
 51. Dr. Matthew Swain, well-meaning doctor in *Peyton Place* (Metallious), resembles Dr. Neal, well-meaning doctor in *Good Luck, Miss Wyckhoff* (Inge), more than either resembles Alger Kates, the murderer in *The Silent Speaker* (Rex Stout).
 
@@ -199,7 +205,7 @@ These hypotheses start to get pretty weak, because we can't be confident that so
 Hypotheses that are weak because they are disrupted by point of view
 ---------------------------------------------------------------------
 
-75. Pip, in *Great Expectations* (Dickens) should resemble Oliver in *Oliver Twist* more than either character resembles Miss Havisham in Great Expectations. (Both youthful protagonists in coming-of-age stories, but Pip is also a first-person narrator.)
+75. Pip, in *Great Expectations* (Dickens) should resemble Oliver in *Oliver Twist* more than either character resembles Miss Havisham in *Great Expectations.* (Both youthful protagonists in coming-of-age stories, but Pip is also a first-person narrator.)
 
 76. Pip, in *Great Expectations* (Dickens) should resemble Oliver in *Oliver Twist* more than he resembles Allen Quatermain in *Allan Quatermain* (H. Rider Haggard). (Here the test is that Quatermain is also a first-person story, but narrated by a character very different than Pip—a grizzled explorer.)
 
