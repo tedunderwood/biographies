@@ -1,7 +1,7 @@
 Preregistered hypotheses about characters
 =========================================
 
-A set of 80 hypotheses we're using to confirm that the character-spaces extracted computationally from books bear some relation to human intuitions.
+A set of 82 hypotheses we're using to confirm that the character-spaces extracted computationally from books bear some relation to human intuitions.
 
 Some of these are drawn from twenty-nine hypotheses about nineteenth-century fiction used in Bamman et al. 2014. That original set has been enlarged, especially to cover twentieth-century fiction.
 
