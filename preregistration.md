@@ -298,12 +298,14 @@ Comparisons that cross more than 50 years may be difficult. Indeed, human reader
 82. The working-class labor organizer Nicholas Higgins, in *North and South* (Gaskell) should resemble the working-class labor organizer Jim Casy, in *The Grapes of Wrath* (Steinbeck) more than either resembles Lord Peter Wimsey in *Strong Poison*.
 
 References
-===========
+==========
 
-David Bamman, Ted Underwood, and Noah Smith. "A Bayesian Mixed Effects Model of Literary Character." *Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics* 2014.
+Bamman, David, Ted Underwood, and Noah Smith. "A Bayesian Mixed Effects Model of Literary Character." *Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics* 2014.
 
 Edel, Leon. *Henry James: The Conquest of London: 1870-1881.* Philadelphia and New York: J. B. Lippincott Company, 1962.
 
 Propp, Vladimir. *Morphology of the Folktale.* 2nd edition. University of Texas Press, 1968.
+
+Thompson, Laure, and David Mimno. "Authorless Topic Models: Biasing Models away from Known Structure." COLING 2018.
 
 Welsh, Alexander. *The Hero of the Waverley Novels.* Athenaeum, 1968.
