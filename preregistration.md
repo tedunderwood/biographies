@@ -267,7 +267,7 @@ These hypotheses start to get pretty weak, because we can't be confident that so
 
 70. Ona Rudkus, exploited teenager in *The Jungle* (Sinclair), resembles Selena Cross, exploited teenager in *Peyton Place* (Metallious), more than either resembles Constance Mackenzie, worried mother in *Peyton Place.*
 
-71. Trilby, performer and tragic ingenue of *Trilby* (Du Maurier), resembles *Sibyl Vane*, performer and tragic ingenue of *Dorian Gray*, more than either resembles Lord Henry, cynical aristocrat in *Dorian Gray.*
+71. Trilby, performer and tragic ingenue of *Trilby* (Du Maurier), resembles Sibyl Vane, performer and tragic ingenue of *Dorian Gray*, more than either resembles Lord Henry, cynical aristocrat in *Dorian Gray.*
 
 72. Dr. Matthew Swain, well-meaning doctor in *Peyton Place* (Metallious), resembles Dr. Neal, well-meaning doctor in *Good Luck, Miss Wyckhoff* (Inge), more than either resembles Lucas Cross, abusive drunkard from *Peyton Place*.
 
