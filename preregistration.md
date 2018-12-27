@@ -6,9 +6,9 @@ This is a first registration for a project that compares characters in fiction a
 Goals of the inquiry
 --------------------
 
-Critical discussion of characterization is organized around a tension between realist and formal approaches to the topic. It can be intuitive to imagine fictional characters as representations of imagined people, who differ from each other in the same ways real people might differ: age, gender, social position, and so on. 
+Critical discussion of characterization is organized around a tension between realist and formal approaches to the topic. It can be intuitive to imagine fictional characters as representations of imagined people, who differ from each other in the same ways real people might differ: age, gender, social position, and so on.
 
-But a strong critical tradition counters this point of view by arguing that characters are really narrative functions (e.g., the protagonist, the mentor, the foil). In this view, characters are distinguished most importantly by the role they play in a plot, and there may be a limited number of basic roles.
+But a strong critical tradition--for instance in Propp--counters this point of view by arguing that characters are really narrative functions (e.g., the protagonist, the mentor, the foil). In this view, characters are distinguished most importantly by the role they play in a plot, and there may be a limited number of basic roles.
 
 There is clearly some truth on both sides of this debate; we don't plan to resolve it. But we can cast light on it by comparing the traits that distinguish fictional characters to the traits that distinguish "characters" (i.e., narrative representations of real people) in biographies.
 
@@ -36,7 +36,7 @@ We plan to create two models: one limited to characters in fiction, the other, c
 
 The models will be created and optimized in parallel ways. At bottom, we are simply going to topic-model collections of characters, where each character is understood as a small text document containing words that describe the character or were spoken by her. Then characters will be represented (roughly) as distributions across topics.
 
-However, there are a lot of choices we can make in the modeling process. To avoid a garden of forking paths, we're going to guide those choices by maximizing the model's ability to distinguish characters in humanly meaningful ways. Since "humanly meaningful" is a slippery phrase that can provide too many "experimenter degrees of freedom," we are locking in a particular definition of the phrase before beginning the experiment. We have done that by specifying 160 human assumptions about the relative distances between pairs of characters. (See "Specific assumptions about character," below.) We will select whatever model fulfills the largest number of assumptions.
+However, there are a lot of choices we can make in the modeling process. To avoid a garden of forking paths, we're going to guide those choices by maximizing the model's ability to distinguish characters in humanly meaningful ways. Since "humanly meaningful" is a slippery phrase that can provide too many "experimenter degrees of freedom," we are locking in a particular definition of the phrase before beginning the experiment. We have done that by specifying 160 human assumptions about the relative distances between pairs of characters. (See "Specific preregistered assumptions," below.) We will select whatever model fulfills the largest number of assumptions.
 
 In particular, we expect these choices to be guided by the model.
 
@@ -55,7 +55,7 @@ There are also other choices that we want to freeze in advance. We expect to use
 What questions will we pose using the models?
 ---------------------------------------------
 
-We want to know, first of all, how similar are the "characters" in biographies to characters in fiction? 
+We want to know, first of all, how similar are the "characters" in biographies to characters in fiction?
 
 One way to pose that question is to compare our two models' ability to predict preregistered assumptions. If a model trained with just fictional characters performs better than one trained with biographical personages, we have evidence that different attributes differentiate roles in the two narrative genres.
 
@@ -76,7 +76,7 @@ Specific preregistered assumptions
 
 A set of 82 hypotheses we're using to confirm that the character-spaces extracted computationally from books bear some relation to human intuitions.
 
-Some of these are drawn from twenty-nine hypotheses about nineteenth-century fiction used in Bamman et al. 2014. That original set has been enlarged, especially to cover twentieth-century fiction.
+The general strategy here is drawn from Bamman et al. 2014, along with some of the 29 hypotheses used in that article. The original group has been greatly enlarged, especially to cover twentieth-century fiction.
 
 Each of the hypotheses affirms that a pair of characters should be more similar to each other than either of them is to a third character we call the "distractor." Each hypothesis thus defines two separate tests, since either (or both) of the characters in the original pair could violate the hypothesis by having a strong resemblance to the distractor.
 
@@ -222,42 +222,42 @@ Now we reach the really challenging task of recognizing that a character in auth
 
 50. Jonathan Wild in *Jack Sheppard* (W. H. Ainsworth) resembles Bill Sikes in *Oliver Twist* (Dickens) more than either one resembles Mr. Brownlow in *Oliver Twist* (Dickens). The two Dickens characters may share some diction, but brutal murderers in the Newgate genre should resemble each other more than they resemble a philanthropist.
 
-51. Isabel Archer, in *Portrait of a Lady* (Henry James) resembles Gwendolyn Harleth in *Daniel Deronda* (George Eliot) more than either character resembles Madame Merle in *Portrait.* (Both Isabel and Gwendolyn are independent spirits trapped in marriages to manipulative husbands. James is said to have drawn explicitly on Eliot’s novels (and perhaps specifically on Harleth) as models for Archer. Edel, Leon. *Henry James: The Conquest of London: 1870-1881.* Philadelphia and New York: J. B. Lippincott Company, 1962. However, no comparison involving James is going to be easy.)
+51. Gandalf, wizard in *The Return of the King* (Tolkien), resembles Merlyn, wizard in *The Sword in the Stone* (T. H. White), more than either resembles Sauron, dark lord from *The Return of the King* (Tolkien).
 
-52. Gilbert Osmond, in *Portrait of a Lady* (Henry James) resembles Henleigh Mallinger Grandcourt in *Daniel Deronda* (George Eliot) more than either character resembles Daniel Deronda in *Deronda.* (Our working hypothesis is that cruel, manipulative husbands resemble each other more than they resemble stand-up guys.)
+52. Rhett Butler, devil-take-care love interest in *Gone with the Wind* (Mitchell), resembles Lord Damerel, devil-take-care love interest in *Venetia* (Heyer), more than either resembles Wade Hampton Hamilton, Scarlett's shy son by her first husband in *Gone with the Wind* (Mitchell).
 
-53. Gandalf, wizard in *The Return of the King* (Tolkien), resembles Merlyn, wizard in *The Sword in the Stone* (T. H. White), more than either resembles Sauron, dark lord from *The Return of the King* (Tolkien).
+53. Scarlett O'Hara, protagonist of the romance *Gone with the Wind* (Mitchell), resembles Venetia, protagonist of the romance *Venetia* (Heyer), more than either resembles the spinster Aunt Pittypat in *Gone with the Wind*.
 
-54. Rhett Butler, devil-take-care love interest in *Gone with the Wind* (Mitchell), resembles Lord Damerel, devil-take-care love interest in *Venetia* (Heyer), more than either resembles Wade Hampton Hamilton, Scarlett's shy son by her first husband in *Gone with the Wind* (Mitchell).
+54. Jim Lassiter, enigmatic loner gunman in *Riders of the Purple Sage* (Zane Gray) resembles Shane, enigmatic loner gunman in *Shane* (Jack Schaefer), more than either resembles the cowardly Elder Tull from *Purple Sage*.
 
-55. Scarlett O'Hara, protagonist of the romance *Gone with the Wind* (Mitchell), resembles Venetia, protagonist of the romance *Venetia* (Heyer), more than either resembles the spinster Aunt Pittypat in *Gone with the Wind*.
+55. Lord Mormont, aristocratic military leader in *Clash of Kings* (George R. R. Martin) resembles Faramir, aristocratic military leader in *Return of the King* (Tolkien), more than either resembles Sauron in *Return of the King*.
 
-56. Jim Lassiter, enigmatic loner gunman in *Riders of the Purple Sage* (Zane Gray) resembles Shane, enigmatic loner gunman in *Shane* (Jack Schaefer), more than either resembles the cowardly Elder Tull from *Purple Sage*.
+56. Hercule Poirot, detective in *Thirteen at Dinner* (Christie), resembles Sherlock Holmes in *The Valley of Fear* (Conan Doyle) more than either of them resemble Lord Edgware, the murder victim in *Thirteen at Dinner*.
 
-57. Lord Mormont, aristocratic military leader in *Clash of Kings* (George R. R. Martin) resembles Faramir, aristocratic military leader in *Return of the King* (Tolkien), more than either resembles Sauron in *Return of the King*.
+57. Sherlock Holmes in *The Adventures of Sherlock Holmes* resembles his fellow detective Lord Peter Wimsey in *The Nine Tailors* more than either of them resemble William Thoday, the (or *a*) murderer in *Nine Tailors*.
 
-58. Hercule Poirot, detective in *Thirteen at Dinner* (Christie), resembles Sherlock Holmes in *The Valley of Fear* (Conan Doyle) more than either of them resemble Lord Edgware, the murder victim in *Thirteen at Dinner*.
+58. Detective Lord Peter Wimsey in *Strong Poison* (Sayers) resembles detective Miss Marple in *The Mirror Crack'd* (Christie) more than either of them resembles Marina Gregg, the murderer in *The Mirror Crack'd*.
 
-59. Sherlock Holmes in *The Adventures of Sherlock Holmes* resembles his fellow detective Lord Peter Wimsey in *The Nine Tailors* more than either of them resemble William Thoday, the (or *a*) murderer in *Nine Tailors*.
+59. Miss Marple, detective in *The Mirror Crack'd* (Christie), resembles Nero Wolfe, armchair detective in *The Silent Speaker* (Rex Stout), more than either of them resemble Cheney Boone, the murder victim in *Silent Speaker*.
 
-60. Detective Lord Peter Wimsey in *Strong Poison* (Sayers) resembles detective Miss Marple in *The Mirror Crack'd* (Christie) more than either of them resembles Marina Gregg, the murderer in *The Mirror Crack'd*.
+60. (Reaching across a good bit of time) Sherlock Holmes, from *The Adventures of Sherlock Holmes,* resembles Nero Wolfe in *The Silent Speaker* more than either of them resemble Alger Kates, the murderer in *Silent Speaker*.
 
-61. Miss Marple, detective in *The Mirror Crack'd* (Christie), resembles Nero Wolfe, armchair detective in *The Silent Speaker* (Rex Stout), more than either of them resemble Cheney Boone, the murder victim in *Silent Speaker*.
+61. Lord Edgware, the murder victim in *Thirteen at Dinner* (Christie), resembles Cheney Boone, the murder victim in *The Silent Speaker* (Stout), more than either resembles Lady Edgware, the murderer in *Thirteen at Dinner*.
 
-62. (Reaching across a good bit of time) Sherlock Holmes, from *The Adventures of Sherlock Holmes,* resembles Nero Wolfe in *The Silent Speaker* more than either of them resemble Alger Kates, the murderer in *Silent Speaker*.
+62. John Douglas McMurdo, the murder victim in *The Valley of Fear* (Conan Doyle), resembles Philip Boyes, the murder victim in *Strong Poison* (Sayers), more than either of them resemble the mystery writer Harriet Vane in *Strong Poison*.
 
-63. Lord Edgware, the murder victim in *Thirteen at Dinner* (Christie), resembles Cheney Boone, the murder victim in *The Silent Speaker* (Stout), more than either resembles Lady Edgware, the murderer in *Thirteen at Dinner*.
+63. Alger Kates, bookish murderer in *The Silent Speaker* (Stout), resembles Norman Urquhart, bookish murderer in *Strong Poison* (Sayers), more than either of them resemble Nero Wolfe, the detective in *Silent Speaker*.
 
-64. John Douglas McMurdo, the murder victim in *The Valley of Fear* (Conan Doyle), resembles Philip Boyes, the murder victim in *Strong Poison* (Sayers), more than either of them resemble the mystery writer Harriet Vane in *Strong Poison*.
-
-65. Alger Kates, bookish murderer in *The Silent Speaker* (Stout), resembles Norman Urquhart, bookish murderer in *Strong Poison* (Sayers), more than either of them resemble Nero Wolfe, the detective in *Silent Speaker*.
-
-66. Carmen Sternwood, glamorous murderer in *The Big Sleep* (Chandler), resembles Marina Gregg, glamorous murderer in *The Mirror Crack'd* (Christie), more than either resembles Miss Marple, the detective in *Mirror Crack'd*.
+64. Carmen Sternwood, glamorous murderer in *The Big Sleep* (Chandler), resembles Marina Gregg, glamorous murderer in *The Mirror Crack'd* (Christie), more than either resembles Miss Marple, the detective in *Mirror Crack'd*.
 
 Social resemblance across authors, distractor from inside
 ----------------------------------------------------------
 
 These hypotheses start to get pretty weak, because we can't be confident that social similarity *ought* to trump genre and authorial style. I have accordingly not created many of them.
+
+65. Isabel Archer, in *Portrait of a Lady* (Henry James) resembles Gwendolyn Harleth in *Daniel Deronda* (George Eliot) more than either character resembles Madame Merle in *Portrait.* (Both Isabel and Gwendolyn are independent spirits trapped in marriages to manipulative husbands. James is said to have drawn explicitly on Eliot’s novels (and perhaps specifically on Harleth) as models for Archer: see Leon Edel in the References. However, no comparison involving James is going to be easy.)
+
+66. Gilbert Osmond, in *Portrait of a Lady* (Henry James) resembles Henleigh Mallinger Grandcourt in *Daniel Deronda* (George Eliot) more than either character resembles Daniel Deronda in *Deronda.* (Our working hypothesis is that cruel, manipulative husbands resemble each other more than they resemble stand-up guys.)
 
 67. Arthur Donnithorne, in *Adam Bede* (George Eliot) resembles Alec d’Urberville in *Tess of the d’Urbervilles* (Thomas Hardy) more than either character resembles Daniel Deronda in *Deronda* (Eliot).
 
@@ -276,6 +276,7 @@ These hypotheses start to get pretty weak, because we can't be confident that so
 74. Tom Sawyer, in *The Adventures of Tom Sawyer* should resemble Oliver in *Oliver Twist* more than either character resembles Miss Havisham in *Great Expectations.* Contrast of age, but this is a debatable hypothesis because Tom often speaks in a national/provincial dialect.
 
 75. Mr. Darcy in *Pride and Prejudice* should resemble Edward Waverly in *Waverly* (Walter Scott) more than either character resembles the villain Rashleigh Osbaldistone in *Rob Roy.* Moral contrast.
+
 
 Hypotheses that are weak because disrupted by a lot of historical time
 -----------------------------------------------------------------------
@@ -296,3 +297,13 @@ Comparisons that cross more than 50 years may be difficult. Indeed, human reader
 
 82. The working-class labor organizer Nicholas Higgins, in *North and South* (Gaskell) should resemble the working-class labor organizer Jim Casy, in *The Grapes of Wrath* (Steinbeck) more than either resembles Lord Peter Wimsey in *Strong Poison*.
 
+References
+===========
+
+David Bamman, Ted Underwood, and Noah Smith. "A Bayesian Mixed Effects Model of Literary Character." *Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics* 2014.
+
+Edel, Leon. *Henry James: The Conquest of London: 1870-1881.* Philadelphia and New York: J. B. Lippincott Company, 1962.
+
+Propp, Vladimir. *Morphology of the Folktale.* 2nd edition. University of Texas Press, 1968.
+
+Welsh, Alexander. *The Hero of the Waverley Novels.* Athenaeum, 1968.
