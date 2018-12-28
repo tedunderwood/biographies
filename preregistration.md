@@ -48,9 +48,9 @@ In particular, we expect these choices to be guided by the model.
 
 3. How many topics to create? (25, 50, 100, or 200). If results are equal or close to equal, we'll choose the smaller model for ease of interpretation.
 
-4. Whether to "center" character vectors by subtracting the average topic distribution for an eleven-year window centered on the book's date of publication. This might be one way to make different
+4. Whether to "center" character vectors by subtracting the average topic distribution for an eleven-year window centered on the book's date of publication. This might be one way to make characters in different periods comparable.
 
-5. Whether to calculate distance as Euclidean distance or cosine distance. (But in all likelihood we'll use the cosine measure.)
+5. Whether to calculate distance as Euclidean distance or cosine distance.
 
 There are also other choices that we want to freeze in advance. We expect to use a very minimal stopword list--perhaps one limited purely to 10 or 15 common words in dialogue. We also plan to collapse different grammatical roles, distinguishing only passive verbs (with the prefix "was-") and words in dialogue (with the prefix "said-").
 
