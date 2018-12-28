@@ -1,3 +1,4 @@
+"name"	"charid"	"supplementalcharid"	"docid"	"inferreddate"	"title"	"author"	"chartype"
 "Hercule Poirot"	"mdp.39015001153629|Poirot"		"mdp.39015001153629"	1933	"Thirteen at dinner."	"Christie, Agatha"	"detective"
 "Lord Edgware"	"mdp.39015001153629|LordEdgware"		"mdp.39015001153629"	1933	"Thirteen at dinner."	"Christie, Agatha"	"victim"
 "Lady Edgware"	"mdp.39015001153629|JaneWilkinson"	"mdp.39015001153629|LadyEdgware"	"mdp.39015001153629"	1933	"Thirteen at dinner."	"Christie, Agatha"	"murderer"
