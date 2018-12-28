@@ -1,55 +1,68 @@
-Hercule Poirot	mdp.39015001153629|Poirot		mdp.39015001153629	1933	Thirteen at dinner.	Christie, Agatha	detective
-Lord Edgware	mdp.39015001153629|LordEdgware		mdp.39015001153629	1933	Thirteen at dinner.	Christie, Agatha	victim
-Lady Edgware	mdp.39015001153629|JaneWilkinson	mdp.39015001153629|LadyEdgware	mdp.39015001153629	1933	Thirteen at dinner.	Christie, Agatha	murderer
-Sherlock Holmes	mdp.39015008439856|Holmes		mdp.39015008439856	1914	The Valley of Fear	Doyle, Arthur Conan	detective
-John Douglas McMurdo	mdp.39015008439856|McMurdo	mdp.39015008439856|Mr.Douglas	mdp.39015008439856	1914	The Valley of Fear	Doyle, Arthur Conan	victim
-Lord Peter Wimsey	mdp.39015020633213|Wimsey		mdp.39015020633213	1934	The Nine Tailors	Sayers, Dorothy L. (Dorothy Leigh)	detective
-William Thoday	mdp.39015020633213|WillThoday	mdp.39015020633213|WilliamThoday	mdp.39015020633213	1934	The Nine Tailors	Sayers, Dorothy L. (Dorothy Leigh)	murderer
-Lord Peter Wimsey	inu.30000007060282|Wimsey		inu.30000007060282	1930	Strong Poison	Sayers, Dorothy L. (Dorothy Leigh)	detective
-Harriet Vane	inu.30000007060282|HarrietVane		inu.30000007060282	1930	Strong Poison	Sayers, Dorothy L. (Dorothy Leigh)	mystery author
-Philip Boyes	inu.30000007060282|PhilipBoyes		inu.30000007060282	1930	Strong Poison	Sayers, Dorothy L. (Dorothy Leigh)	murder victim
-Norman Urquhart	inu.30000007060282|Mr.Urquhart		inu.30000007060282	1930	Strong Poison	Sayers, Dorothy L. (Dorothy Leigh)	murderer
-Carmen Sternwood	mdp.39015031600409|Carmen		mdp.39015031600409	1939	The Big Sleep	Chandler, Raymond	murderer
-Eddie Mars	mdp.39015031600409|EddieMars		mdp.39015031600409	1939	The Big Sleep	Chandler, Raymond	gangster
-Miss Marple	mdp.39015061868363|MissMarple		mdp.39015061868363	1962	The Mirror Crack'd	Christie, Agatha	detective
-Heather Badcock	mdp.39015061868363|HeatherBadcock	mdp.39015061868363|Mrs.Badcock	mdp.39015061868363	1962	The Mirror Crack'd	Christie, Agatha	victim
-Marina Gregg	mdp.39015061868363|MarinaGregg		mdp.39015061868363	1962	The Mirror Crack'd	Christie, Agatha	murderer
-Rhett Butler	mdp.39015005776847|Rhett		mdp.39015005776847	1936	Gone with the Wind	Mitchell, Margaret	male love interest
-Scarlett O'Hara	mdp.39015005776847|Scarlett		mdp.39015005776847	1936	Gone with the Wind	Mitchell, Margaret	female love interest
-Aunt Pittypat	mdp.39015005776847|AuntPittypat		mdp.39015005776847	1936	Gone with the Wind	Mitchell, Margaret	spinster aunt
-Jim Lassiter	nyp.33433076067192|Lassiter		nyp.33433076067192	1912	Riders of the Purple Sage	Grey, Zane	enigmatic gunman hero
-Wade Hampton Hamilton	mdp.39015005776847|Wade		mdp.39015005776847	1936	Gone with the Wind	Mitchell, Margaret	shy boy
-Jane Withersteen	nyp.33433076067192|Jane		nyp.33433076067192	1912	Riders of the Purple Sage	Grey, Zane	female lead
-Elder Tull	nyp.33433076067192|Tull		nyp.33433076067192	1912	Riders of the Purple Sage	Grey, Zane	cowardly villain
-Sauron	mdp.39015038927201|Sauron		mdp.39015038927201	1955	Return of the King	Tolkien, J. R. R (John Ronald Reuel)	dark lord
-Faramir	mdp.39015038927201|Faramir		mdp.39015038927201	1955	Return of the King	Tolkien, J. R. R (John Ronald Reuel)	military/fantasy
-Gandalf	mdp.39015038927201|Gandalf		mdp.39015038927201	1955	Return of the King	Tolkien, J. R. R (John Ronald Reuel)	wizard
-Merlyn	inu.30000054447648|Merlyn		inu.30000054447648	1957	The Sword in the Stone	White, T. H. (Terence Hanbury)	wizard
-Venetia	osu.32435083797019|Venetia		osu.32435083797019	1958	Venetia	Heyer, Georgette	female love interest
-Lord Damerel	osu.32435083797019|Damerel		osu.32435083797019	1958	Venetia	Heyer, Georgette	male love interest
-Jim Casy	mdp.39015022095585|Casy		mdp.39015022095585	1939	The Grapes of Wrath	Steinbeck, John	former preacher, christ figure
-Tom Joad	mdp.39015022095585|Tom		mdp.39015022095585	1939	The Grapes of Wrath	Steinbeck, John	suffering working-class protagonist
-Ruthie Joad	mdp.39015022095585|Ruthie		mdp.39015022095585	1939	The Grapes of Wrath	Steinbeck, John	reckless child
-Selena Cross	inu.30000035415862|Selena		inu.30000035415862	1956	Peyton Place	Metallious, Grace	exploited teenager who kills abuser
-Dr. Matthew Swain	inu.30000035415862|Dr.Swain	inu.30000035415862|Doc	inu.30000035415862	1956	Peyton Place	Metallious, Grace	good-hearted doctor
-Constance Mackenzie	inu.30000035415862|Constance		inu.30000035415862	1956	Peyton Place	Metallious, Grace	middle-class protagonist
-Lucas Cross	inu.30000035415862|Lucas		inu.30000035415862	1956	Peyton Place	Metallious, Grace	abusive drunkard
-Jennifer Cavilleri	mdp.39015008850250|Jenny	mdp.39015008850250|Jennifer	mdp.39015008850250	1970	Love Story	Segal, Erich	female love interest
-Shane	uc1.$b401276|Shane		uc1.$b401276	1949	Shane	Schaefer, Jack	enigmatic gunman hero
-Luke Fletcher	uc1.$b401276|Fletcher		uc1.$b401276	1949	Shane	Schaefer, Jack	western antagonist
-Nero Wolfe	uc1.32106006434416|Mr.Wolfe	uc1.32106006434416|Wolfe	uc1.32106006434416	1946	The Silent Speaker	Stout, Rex	detective
-Cheney Boone	uc1.32106006434416|Mr.Boone	uc1.32106006434416|Boone	uc1.32106006434416	1946	The Silent Speaker	Stout, Rex	victim
-Alger Kates	uc1.32106006434416|Kates	uc1.32106006434416|Mr.Kates	uc1.32106006434416	1946	The Silent Speaker	Stout, Rex	murderer
-Trilby	11109|Trilby				Trilby	Du Maurier, George	ingenue-performer
-Werper	uva.x000241745|Werper		uva.x000241745	1918	Tarzan and the Jewels of Opar	Burroughs, Edgar Rice	villain
-Tarzan	uva.x000241745|Tarzan		uva.x000241745	1918	Tarzan and the Jewels of Opar	Burroughs, Edgar Rice	apeman
-Tarzan	uc2.ark+=13960=t10p0wz08|Tarzan		uc2.ark+=13960=t10p0wz08	1920	Tarzan the Untamed	Burroughs, Edgar Rice	apeman
-Sybil Vane	2655|Sibyl	2655|Sybil	2655	1891	Dorian Gray	Wilde, Oscar	ingenue-performer
-Lord Henry	2655|LordHenry		2655	1891	Dorian Gray	Wilde, Oscar	cynical aristocrat
-Caroline Meeber	mdp.39015066054217|Carrie		mdp.39015066054217	1900	Sister Carrie	Dreiser, Theodore	aspiring young woman/protagonist
-Dr Neal	uc1.b4384804|Dr.Neal		uc1.b4384804	1970	Good Luck, Miss Wyckhoff	Inge, William	physician
-Lord Mormont	mdp.39015046463629|LordMormont		mdp.39015046463629	1999	A clash of kings	Martin, George R. R	military/fantasy
-Jurgis Rudkus	mdp.39015026884190|Jurgis		mdp.39015026884190	1904	The Jungle	Sinclair, Upton	struggling working-class protagonist
-Ona Rudkus	mdp.39015026884190|Ona		mdp.39015026884190	1904	The Jungle	Sinclair, Upton	working-class woman dying in childbirth
-Durham	mdp.39015026884190|Durham		mdp.39015026884190	1904	The Jungle	Sinclair, Upton	businessman/employer
-King Richard	5854|Richard		5854	1817	Ivanhoe	Scott, Walter	noble military leader
+"Hercule Poirot"	"mdp.39015001153629|Poirot"		"mdp.39015001153629"	1933	"Thirteen at dinner."	"Christie, Agatha"	"detective"
+"Lord Edgware"	"mdp.39015001153629|LordEdgware"		"mdp.39015001153629"	1933	"Thirteen at dinner."	"Christie, Agatha"	"victim"
+"Lady Edgware"	"mdp.39015001153629|JaneWilkinson"	"mdp.39015001153629|LadyEdgware"	"mdp.39015001153629"	1933	"Thirteen at dinner."	"Christie, Agatha"	"murderer"
+"Sherlock Holmes"	"mdp.39015008439856|Holmes"		"mdp.39015008439856"	1914	"The Valley of Fear"	"Doyle, Arthur Conan"	"detective"
+"John Douglas McMurdo"	"mdp.39015008439856|McMurdo"	"mdp.39015008439856|Mr.Douglas"	"mdp.39015008439856"	1914	"The Valley of Fear"	"Doyle, Arthur Conan"	"victim"
+"Lord Peter Wimsey"	"mdp.39015020633213|Wimsey"		"mdp.39015020633213"	1934	"The Nine Tailors"	"Sayers, Dorothy L. (Dorothy Leigh)"	"detective"
+"William Thoday"	"mdp.39015020633213|WillThoday"	"mdp.39015020633213|WilliamThoday"	"mdp.39015020633213"	1934	"The Nine Tailors"	"Sayers, Dorothy L. (Dorothy Leigh)"	"murderer"
+"Lord Peter Wimsey"	"inu.30000007060282|Wimsey"		"inu.30000007060282"	1930	"Strong Poison"	"Sayers, Dorothy L. (Dorothy Leigh)"	"detective"
+"Harriet Vane"	"inu.30000007060282|HarrietVane"		"inu.30000007060282"	1930	"Strong Poison"	"Sayers, Dorothy L. (Dorothy Leigh)"	"mystery author"
+"Philip Boyes"	"inu.30000007060282|PhilipBoyes"		"inu.30000007060282"	1930	"Strong Poison"	"Sayers, Dorothy L. (Dorothy Leigh)"	"murder victim"
+"Norman Urquhart"	"inu.30000007060282|Mr.Urquhart"		"inu.30000007060282"	1930	"Strong Poison"	"Sayers, Dorothy L. (Dorothy Leigh)"	"murderer"
+"Carmen Sternwood"	"mdp.39015031600409|Carmen"		"mdp.39015031600409"	1939	"The Big Sleep"	"Chandler, Raymond"	"murderer"
+"Eddie Mars"	"mdp.39015031600409|EddieMars"		"mdp.39015031600409"	1939	"The Big Sleep"	"Chandler, Raymond"	"gangster"
+"Miss Marple"	"mdp.39015061868363|MissMarple"		"mdp.39015061868363"	1962	"The Mirror Crack'd"	"Christie, Agatha"	"detective"
+"Heather Badcock"	"mdp.39015061868363|HeatherBadcock"	"mdp.39015061868363|Mrs.Badcock"	"mdp.39015061868363"	1962	"The Mirror Crack'd"	"Christie, Agatha"	"victim"
+"Marina Gregg"	"mdp.39015061868363|MarinaGregg"		"mdp.39015061868363"	1962	"The Mirror Crack'd"	"Christie, Agatha"	"murderer"
+"Rhett Butler"	"mdp.39015005776847|Rhett"		"mdp.39015005776847"	1936	"Gone with the Wind"	"Mitchell, Margaret"	"male love interest"
+"Scarlett O'Hara"	"mdp.39015005776847|Scarlett"		"mdp.39015005776847"	1936	"Gone with the Wind"	"Mitchell, Margaret"	"female love interest"
+"Aunt Pittypat"	"mdp.39015005776847|AuntPittypat"		"mdp.39015005776847"	1936	"Gone with the Wind"	"Mitchell, Margaret"	"spinster aunt"
+"Jim Lassiter"	"nyp.33433076067192|Lassiter"		"nyp.33433076067192"	1912	"Riders of the Purple Sage"	"Grey, Zane"	"enigmatic gunman hero"
+"Wade Hampton Hamilton"	"mdp.39015005776847|Wade"		"mdp.39015005776847"	1936	"Gone with the Wind"	"Mitchell, Margaret"	"shy boy"
+"Jane Withersteen"	"nyp.33433076067192|Jane"		"nyp.33433076067192"	1912	"Riders of the Purple Sage"	"Grey, Zane"	"female lead"
+"Elder Tull"	"nyp.33433076067192|Tull"		"nyp.33433076067192"	1912	"Riders of the Purple Sage"	"Grey, Zane"	"cowardly villain"
+"Sauron"	"mdp.39015038927201|Sauron"		"mdp.39015038927201"	1955	"Return of the King"	"Tolkien, J. R. R (John Ronald Reuel)"	"dark lord"
+"Faramir"	"mdp.39015038927201|Faramir"		"mdp.39015038927201"	1955	"Return of the King"	"Tolkien, J. R. R (John Ronald Reuel)"	"military/fantasy"
+"Gandalf"	"mdp.39015038927201|Gandalf"		"mdp.39015038927201"	1955	"Return of the King"	"Tolkien, J. R. R (John Ronald Reuel)"	"wizard"
+"Merlyn"	"inu.30000054447648|Merlyn"		"inu.30000054447648"	1957	"The Sword in the Stone"	"White, T. H. (Terence Hanbury)"	"wizard"
+"Venetia"	"osu.32435083797019|Venetia"		"osu.32435083797019"	1958	"Venetia"	"Heyer, Georgette"	"female love interest"
+"Lord Damerel"	"osu.32435083797019|Damerel"		"osu.32435083797019"	1958	"Venetia"	"Heyer, Georgette"	"male love interest"
+"Jim Casy"	"mdp.39015022095585|Casy"		"mdp.39015022095585"	1939	"The Grapes of Wrath"	"Steinbeck, John"	"former preacher, christ figure"
+"Tom Joad"	"mdp.39015022095585|Tom"		"mdp.39015022095585"	1939	"The Grapes of Wrath"	"Steinbeck, John"	"suffering working-class protagonist"
+"Ruthie Joad"	"mdp.39015022095585|Ruthie"		"mdp.39015022095585"	1939	"The Grapes of Wrath"	"Steinbeck, John"	"reckless child"
+"Selena Cross"	"inu.30000035415862|Selena"		"inu.30000035415862"	1956	"Peyton Place"	"Metallious, Grace"	"exploited teenager who kills abuser"
+"Dr. Matthew Swain"	"inu.30000035415862|Dr.Swain"	"inu.30000035415862|Doc"	"inu.30000035415862"	1956	"Peyton Place"	"Metallious, Grace"	"good-hearted doctor"
+"Constance Mackenzie"	"inu.30000035415862|Constance"		"inu.30000035415862"	1956	"Peyton Place"	"Metallious, Grace"	"middle-class protagonist"
+"Lucas Cross"	"inu.30000035415862|Lucas"		"inu.30000035415862"	1956	"Peyton Place"	"Metallious, Grace"	"abusive drunkard"
+"Jennifer Cavilleri"	"mdp.39015008850250|Jenny"	"mdp.39015008850250|Jennifer"	"mdp.39015008850250"	1970	"Love Story"	"Segal, Erich"	"female love interest"
+"Shane"	"uc1.$b401276|Shane"		"uc1.$b401276"	1949	"Shane"	"Schaefer, Jack"	"enigmatic gunman hero"
+"Luke Fletcher"	"uc1.$b401276|Fletcher"		"uc1.$b401276"	1949	"Shane"	"Schaefer, Jack"	"western antagonist"
+"Nero Wolfe"	"uc1.32106006434416|Mr.Wolfe"	"uc1.32106006434416|Wolfe"	"uc1.32106006434416"	1946	"The Silent Speaker"	"Stout, Rex"	"detective"
+"Cheney Boone"	"uc1.32106006434416|Mr.Boone"	"uc1.32106006434416|Boone"	"uc1.32106006434416"	1946	"The Silent Speaker"	"Stout, Rex"	"victim"
+"Alger Kates"	"uc1.32106006434416|Kates"	"uc1.32106006434416|Mr.Kates"	"uc1.32106006434416"	1946	"The Silent Speaker"	"Stout, Rex"	"murderer"
+"Trilby"	"11109|Trilby"				"Trilby"	"Du Maurier, George"	"ingenue-performer"
+"Werper"	"uva.x000241745|Werper"		"uva.x000241745"	1918	"Tarzan and the Jewels of Opar"	"Burroughs, Edgar Rice"	"villain"
+"Tarzan"	"uva.x000241745|Tarzan"		"uva.x000241745"	1918	"Tarzan and the Jewels of Opar"	"Burroughs, Edgar Rice"	"apeman"
+"Tarzan"	"uc2.ark+=13960=t10p0wz08|Tarzan"		"uc2.ark+=13960=t10p0wz08"	1920	"Tarzan the Untamed"	"Burroughs, Edgar Rice"	"apeman"
+"Sybil Vane"	"2655|Sibyl"	"2655|Sybil"	2655	1891	"Dorian Gray"	"Wilde, Oscar"	"ingenue-performer"
+"Lord Henry"	"2655|LordHenry"		2655	1891	"Dorian Gray"	"Wilde, Oscar"	"cynical aristocrat"
+"Caroline Meeber"	"mdp.39015066054217|Carrie"		"mdp.39015066054217"	1900	"Sister Carrie"	"Dreiser, Theodore"	"aspiring young woman/protagonist"
+"Dr Neal"	"uc1.b4384804|Dr.Neal"		"uc1.b4384804"	1970	"Good Luck, Miss Wyckhoff"	"Inge, William"	"physician"
+"Lord Mormont"	"mdp.39015046463629|LordMormont"		"mdp.39015046463629"	1999	"A clash of kings"	"Martin, George R. R"	"military/fantasy"
+"Jurgis Rudkus"	"mdp.39015026884190|Jurgis"		"mdp.39015026884190"	1904	"The Jungle"	"Sinclair, Upton"	"struggling working-class protagonist"
+"Ona Rudkus"	"mdp.39015026884190|Ona"		"mdp.39015026884190"	1904	"The Jungle"	"Sinclair, Upton"	"working-class woman dying in childbirth"
+"Durham"	"mdp.39015026884190|Durham"		"mdp.39015026884190"	1904	"The Jungle"	"Sinclair, Upton"	"businessman/employer"
+"King Richard"	"5854|Richard"		5854	1817	"Ivanhoe"	"Scott, Walter"	"noble military leader"
+"Rick Deckard"	"mdp.39015038166594|Rick"	"mdp.39015038166594|Mr.Deckard"	"mdp.39015038166594"	1968			"bounty hunter/detective"
+"Sam Spade"	"mdp.39015003474866|Spade"		"mdp.39015003474866"	1930	"Novels of Dashiell Hammett"	"Hammett, Dashiell"	"private eye"
+"Hugo Bellfounder"	"mdp.39015005567709|Hugo"	"mdp.39015005567709|Belfounder"	"mdp.39015005567709"	1954	"Under the Net"	"Murdoch, Iris"	"philosopher"
+"Anna Quentin"	"mdp.39015005567709|Anna"		"mdp.39015005567709"	1954	"Under the Net"	"Murdoch, Iris"	"singer"
+"Brun"	"mdp.39015020746072|Brun"		"mdp.39015020746072"		"Clan of the Cave Bear"	"Auel, Jean"	"neanderthal"
+"Margaret Schlegel"	"mdp.39015003625863|Margaret"		"mdp.39015003625863"	1910	"Howard's End"	"Forster, E. M."	"idealist"
+"Charles Wilcox"	"mdp.39015003625863|Charles"		"mdp.39015003625863"	1910	"Howard's End"	"Forster, E. M."	"philistine"
+"Helen Schlegel"	"mdp.39015003625863|Helen"		"mdp.39015003625863"	1910	"Howard's End"	"Forster, E. M."	"idealist"
+"Kezia St Martin"	"pst.000061255661|Kezia"		"pst.000061255661"	1977	"Passion's Promise"	"Steele, Danielle"	"romance lead; journalist"
+"Tiffany"	"pst.000061255661|Tiffany"		"pst.000061255661"	1977	"Passion's Promise"	"Steele, Danielle"	"alcoholic, eventually kills herself"
+"Lucas Johns"	"pst.000061255661|Lucas"		"pst.000061255661"	1977	"Passion's Promise"	"Steele, Danielle"	"love interest, crusading ex-con"
+"Lord Rotherham"	"mdp.39015047606440|Rotherham"	"mdp.39015047606440|LordRotherham"	"mdp.39015047606440"	1955	"Bath Tangle"	"Heyer, Georgette"	"Regency beau"
+"Lady Serena Carlow"	"mdp.39015047606440|Serena"		"mdp.39015047606440"	1955	"Bath Tangle"	"Heyer, Georgette"	"Regency belle"
