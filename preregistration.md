@@ -8,9 +8,9 @@ Goals of the inquiry
 
 Critical discussion of characterization is organized around a tension between realist and formal approaches to the topic. It can be intuitive to imagine fictional characters as representations of imagined people, who differ from each other in the same ways real people might differ: age, gender, social position, and so on.
 
-But another critical tradition--for instance in Propp--counters this approach by arguing that characters are basically narrative functions (e.g., the protagonist, the mentor, the foil). In this view, characters are distinguished most importantly by the role they play in a plot.
+But another critical tradition--for instance in Propp--counters this approach by arguing that characters are basically narrative functions (e.g., the protagonist, the mentor, the foil). In this view, characters are distinguished most importantly by the roles they play in a plot, which may be purely conventional or structural.
 
-Both sides of this debate clearly have valid insights, which may be more or less true in different genres of fiction. We don't plan to resolve the question in a simple way. But we can cast light on it by comparing the traits that distinguish fictional characters to the traits that distinguish "characters" (i.e., narrative representations of real people) in biographies.
+Both sides of this debate clearly have valid insights, which may apply more or less strongly to different genres of fiction. We don't plan to completely resolve the question. But we can cast light on it by comparing the traits that distinguish fictional characters to the traits that distinguish "characters" (i.e., narrative representations of real people) in biographies.
 
 We want to know
 
