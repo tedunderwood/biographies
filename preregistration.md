@@ -16,9 +16,11 @@ We want to know
 
 1. Broadly, how similar are characters in fiction and nonfiction?
 
-2. Do the historical *changes* that transform characterization in fiction also affect nonfiction? If the answer is "yes and no," as we expect: Can we identify examples of changes that are/are not shared between the genres?
+2. Can we identify particular dimensions of character that are relatively unique to fiction, or relatively common to all forms of narrative?
 
-3. In particular, what about representations of gender? Can we characterize them as primarily shaped by plot roles / genre conventions, or primarily shaped by broad social attitudes shared with nonfiction?
+3. Do the historical *changes* that transform characterization in fiction also affect nonfiction? Which changes are, or are not, shared?
+
+4. In particular, what about representations of gender? Can we characterize particular aspects of gender as primarily shaped by plot roles / genre conventions, or primarily shaped by broad social transformations that were shared with nonfiction?
 
 Data already gathered; exploration already performed
 ----------------------------------------------------
