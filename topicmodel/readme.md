@@ -26,7 +26,7 @@ Scripts that translate the output of MALLET into meaningful results.
 
 fic50
 ------
-A model using only fiction, prepared without any stopwording, and divided into 50 topics. This and other models described only as fic + integer are based on malletficchars.txt, which contained 631,152 characters and was imported into MALLET as basicficchars.mallet.
+A model using only fiction, prepared without any stopwording, and divided into 50 topics. This and other models described only as fic + integer are based on malletficchars.txt, which contained 18,987 volumes and 631,388 characters, and was imported into MALLET as basicficchars.mallet.
 
 fic100
 -------
