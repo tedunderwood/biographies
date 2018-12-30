@@ -1,0 +1,184 @@
+11031|Holmes	7422|Sikes	right
+1	11594|Holmes	7422|Sikes	right
+11031|Holmes	mdp.39015066054217|Carrie	right
+2	mdp.39015008439856|Holmes	mdp.39015066054217|Carrie	right
+uc2.ark+=13960=t10p0wz08|Tarzan	mdp.39015005776847|Rhett	right
+3	uva.x000241745|Tarzan	mdp.39015005776847|Rhett	right
+11594|Holmes	mdp.39015008439856|McMurdo	right
+4	mdp.39015008439856|Holmes	mdp.39015008439856|McMurdo	right
+uc2.ark+=13960=t10p0wz08|Tarzan	uva.x000241745|Werper	right
+5	uva.x000241745|Tarzan	uva.x000241745|Werper	right
+mdp.39015020633213|Wimsey	inu.30000007060282|HarrietVane	right
+6	inu.30000007060282|Wimsey	inu.30000007060282|HarrietVane	right
+10651|Elizabeth	5854|Richard	right
+7	1516|Elinor	5854|Richard	right
+14796|Emily	6154|Uriah	right
+8	3727|Adeline	6154|Uriah	right
+mdp.39015001153629|Poirot	mdp.39015005776847|Scarlett	right
+9	mdp.39015061868363|MissMarple	mdp.39015005776847|Scarlett	right
+mdp.39015001153629|Poirot	mdp.39015031600409|EddieMars	right
+10	mdp.39015061868363|MissMarple	mdp.39015031600409|EddieMars	right
+10651|Elizabeth	8763|MadameMerle	right
+11	1516|Elinor	8763|MadameMerle	right
+10651|Wickham	10117|Mr.Rochester	right
+12	1516|Willoughby	10117|Mr.Rochester	right
+mdp.39015001153629|LordEdgware	mdp.39015022095585|Casy	right
+13	mdp.39015061868363|HeatherBadcock	mdp.39015022095585|Casy	right
+mdp.39015001153629|JaneWilkinson	mdp.39015008850250|Jenny	right
+14	mdp.39015061868363|MarinaGregg	mdp.39015008850250|Jenny	wrong
+12985|Diana	14796|Emily	wrong
+15	12449|Flora	14796|Emily	wrong
+mdp.39015003625863|Margaret	mdp.39015066054217|Carrie	right
+16	mdp.39015003625863|Helen	mdp.39015066054217|Carrie	wrong
+osu.32435083797019|Venetia	inu.30000035415862|Selena	right
+17	mdp.39015047606440|Serena	inu.30000035415862|Selena	right
+10651|Elizabeth	1516|Willoughby	right
+18	1516|Elinor	1516|Willoughby	right
+14796|Emily	14796|Montoni*	right
+19	3727|Adeline	14796|Montoni*	right
+mdp.39015001153629|Poirot	mdp.39015001153629|JaneWilkinson	right
+20	mdp.39015061868363|MissMarple	mdp.39015001153629|JaneWilkinson	right
+mdp.39015001153629|LordEdgware	mdp.39015061868363|MarinaGregg	right
+21	mdp.39015061868363|HeatherBadcock	mdp.39015061868363|MarinaGregg	wrong
+mdp.39015001153629|JaneWilkinson	mdp.39015001153629|Poirot	right
+22	mdp.39015061868363|MarinaGregg	mdp.39015001153629|Poirot	right
+10651|Wickham	10651|Mr.Darcy	wrong
+23	1516|Willoughby	10651|Mr.Darcy	wrong
+10651|Elizabeth	10651|Mrs.Bennet	right
+24	1516|Elinor	10651|Mrs.Bennet	right
+2723|JohnBarton	11034|Margaret	wrong
+25	11034|Nicholas	11034|Margaret	right
+6154|Agnes	6154|Uriah	right
+26	6155|Lizzie	6154|Uriah	wrong
+5854|Rowena	5854|Rebecca	wrong
+27	12449|MissBradwardine	5854|Rebecca	wrong
+3727|Marquis	14796|Valancourt	right
+28	14796|Montoni*	14796|Valancourt	right
+mdp.39015003625863|Margaret	mdp.39015003625863|Charles	right
+29	mdp.39015003625863|Helen	mdp.39015003625863|Charles	right
+mdp.39015038927201|Gandalf	mdp.39015022095585|Ruthie	right
+30	inu.30000054447648|Merlyn	mdp.39015022095585|Ruthie	wrong
+mdp.39015005776847|Rhett	mdp.39015022095585|Casy	right
+31	osu.32435083797019|Damerel	mdp.39015022095585|Casy	right
+mdp.39015005776847|Scarlett	mdp.39015061868363|MissMarple	right
+32	osu.32435083797019|Venetia	mdp.39015061868363|MissMarple	right
+nyp.33433076067192|Lassiter	inu.30000007060282|Wimsey	wrong
+33	uc1.$b401276|Shane	inu.30000007060282|Wimsey	right
+mdp.39015046463629|LordMormont	inu.30000035415862|Lucas	right
+34	mdp.39015038927201|Faramir	inu.30000035415862|Lucas	wrong
+mdp.39015001153629|Poirot	mdp.39015031600409|Carmen	right
+35	mdp.39015008439856|Holmes	mdp.39015031600409|Carmen	right
+11031|Holmes	2723|JohnBarton	wrong
+36	mdp.39015020633213|Wimsey	2723|JohnBarton	wrong
+inu.30000007060282|Wimsey	nyp.33433076067192|Jane	right
+37	mdp.39015061868363|MissMarple	nyp.33433076067192|Jane	right
+mdp.39015061868363|MissMarple	inu.30000035415862|Constance	right
+38	uc1.32106006434416|Mr.Wolfe	inu.30000035415862|Constance	right
+mdp.39015001153629|LordEdgware	mdp.39015022095585|Tom	wrong
+39 	uc1.32106006434416|Mr.Boone	mdp.39015022095585|Tom	right
+mdp.39015008439856|McMurdo	nyp.33433076067192|Tull	wrong
+40	inu.30000007060282|PhilipBoyes	nyp.33433076067192|Tull	right
+inu.30000007060282|PhilipBoyes	mdp.39015066054217|Carrie	right
+41	mdp.39015061868363|HeatherBadcock	mdp.39015066054217|Carrie	right
+mdp.39015031600409|Carmen	inu.30000054447648|Merlyn	right
+42	mdp.39015061868363|MarinaGregg	inu.30000054447648|Merlyn	wrong
+uc1.32106006434416|Kates	uc2.ark+=13960=t10p0wz08|Tarzan	right
+43	inu.30000007060282|Mr.Urquhart	uc2.ark+=13960=t10p0wz08|Tarzan	right
+14796|Montoni*	10651|Mr.Bennet	right
+44	8469|Heathcliff	10651|Mr.Bennet	right
+uc1.$b808866|Ed	mdp.39015038927201|Faramir	right
+45	mdp.39015038166594|Rick	mdp.39015038927201|Faramir	wrong
+mdp.39015003474866|Spade	mdp.39015005776847|Wade	right
+46	uc1.$b808866|Ed	mdp.39015005776847|Wade	right
+4002|Arthur	11034|Mr.Thornton	wrong
+47	417|AlecD'Urberville	11034|Mr.Thornton	right
+986|Alice	7225|Legree	right
+48	10117|Helen	7225|Legree	right
+7422|Sikes	7095|Francisco	wrong
+49	13180|John	7095|Francisco	right
+mdp.39015022095585|Tom	2655|LordHenry	right
+50	mdp.39015026884190|Jurgis	2655|LordHenry	right
+mdp.39015026884190|Ona	mdp.39015001153629|Poirot	right
+51	inu.30000035415862|Selena	mdp.39015001153629|Poirot	right
+mdp.39015066054217|Carrie	uva.x000241745|Tarzan	right
+52	mdp.39015026884190|Jurgis	uva.x000241745|Tarzan	right
+11109|Trilby	8763|MadameMerle	wrong
+53	2655|Sibyl	8763|MadameMerle	right
+inu.30000035415862|Dr.Swain	uc1.32106006434416|Kates	wrong
+54	uc1.b4384804|Dr.Neal	uc1.32106006434416|Kates	wrong
+mdp.39015003625863|Helen	nyp.33433076067192|Jane	wrong
+55	mdp.39015005567709|Anna	nyp.33433076067192|Jane	right
+mdp.39015003625863|Margaret	mdp.39015026884190|Jurgis	wrong
+56	9583|Deronda	mdp.39015026884190|Jurgis	right
+6575|Jonathan	7422|Mr.Brownlow	right
+57	7422|Sikes	7422|Mr.Brownlow	right
+mdp.39015038927201|Gandalf	mdp.39015038927201|Sauron	right
+58	inu.30000054447648|Merlyn	mdp.39015038927201|Sauron	right
+mdp.39015005776847|Rhett	mdp.39015005776847|Wade	right
+59	osu.32435083797019|Damerel	mdp.39015005776847|Wade	right
+mdp.39015005776847|Scarlett	mdp.39015005776847|AuntPittypat	right
+60	osu.32435083797019|Venetia	mdp.39015005776847|AuntPittypat	right
+nyp.33433076067192|Lassiter	nyp.33433076067192|Tull	wrong
+61	uc1.$b401276|Shane	nyp.33433076067192|Tull	wrong
+mdp.39015046463629|LordMormont	mdp.39015038927201|Sauron	wrong
+62	mdp.39015038927201|Faramir	mdp.39015038927201|Sauron	wrong
+mdp.39015003474866|Spade	mdp.39015001153629|LordEdgware	right
+63	mdp.39015008439856|Holmes	mdp.39015001153629|LordEdgware	right
+11031|Holmes	mdp.39015020633213|WillThoday	wrong
+64	mdp.39015020633213|Wimsey	mdp.39015020633213|WillThoday	wrong
+inu.30000007060282|Wimsey	mdp.39015061868363|MarinaGregg	right
+65	mdp.39015061868363|MissMarple	mdp.39015061868363|MarinaGregg	right
+mdp.39015061868363|MissMarple	uc1.32106006434416|Mr.Boone	right
+66	uc1.32106006434416|Mr.Wolfe	uc1.32106006434416|Mr.Boone	right
+11031|Holmes	uc1.32106006434416|Kates	wrong
+67	uc1.32106006434416|Mr.Wolfe	uc1.32106006434416|Kates	wrong
+mdp.39015001153629|LordEdgware	mdp.39015001153629|JaneWilkinson	right
+68 	uc1.32106006434416|Mr.Boone	mdp.39015001153629|JaneWilkinson	right
+mdp.39015008439856|McMurdo	inu.30000007060282|HarrietVane	wrong
+69	inu.30000007060282|PhilipBoyes	inu.30000007060282|HarrietVane	wrong
+uc1.32106006434416|Kates	uc1.32106006434416|Mr.Wolfe	wrong
+70	inu.30000007060282|Mr.Urquhart	uc1.32106006434416|Mr.Wolfe	wrong
+mdp.39015031600409|Carmen	mdp.39015061868363|MissMarple	wrong
+71	mdp.39015061868363|MarinaGregg	mdp.39015061868363|MissMarple	wrong
+pst.000061255661|Kezia	mdp.39015005776847|AuntPittypat	right
+72	mdp.39015005776847|Scarlett	mdp.39015005776847|AuntPittypat	right
+pst.000061255661|Kezia	pst.000061255661|Tiffany	wrong
+73	osu.32435083797019|Venetia	pst.000061255661|Tiffany	right
+8763|Mrs.Osmond	8763|MadameMerle	right
+74	9583|Mrs.Grandcourt	8763|MadameMerle	wrong
+8763|Mr.Osmond	9583|Deronda	right
+75	9583|Grandcourt	9583|Deronda	right
+4002|Arthur	9583|Deronda	wrong
+76	417|AlecD'Urberville	9583|Deronda	right
+986|Alice	10117|Mr.Rochester	right
+77	10117|Helen	10117|Mr.Rochester	right
+mdp.39015022095585|Tom	mdp.39015026884190|Durham	right
+78	mdp.39015026884190|Jurgis	mdp.39015026884190|Durham	right
+mdp.39015026884190|Ona	inu.30000035415862|Constance	right
+79	inu.30000035415862|Selena	inu.30000035415862|Constance	right
+11109|Trilby	2655|LordHenry	wrong
+80	2655|Sibyl	2655|LordHenry	right
+inu.30000035415862|Dr.Swain	inu.30000035415862|Lucas	wrong
+81	uc1.b4384804|Dr.Neal	inu.30000035415862|Lucas	wrong
+mdp.39015005776847|Wade	mdp.39015005776847|AuntPittypat	right
+82	mdp.39015022095585|Ruthie	mdp.39015005776847|AuntPittypat	right
+5819|Tom	13798|MissHavisham	right
+83	7422|Oliver	13798|MissHavisham	right
+10651|Mr.Darcy	12985|Rashleigh	wrong
+84	12449|Waverley	12985|Rashleigh	right
+14240|Silas	14796|Valancourt	right
+85	14796|Montoni*	14796|Valancourt	right
+10651|Mr.Darcy	mdp.39015003474866|Spade	right
+86	mdp.39015047606440|Rotherham	mdp.39015003474866|Spade	right
+5819|Huck	2655|LordHenry	wrong
+87	mdp.39015022095585|Ruthie	2655|LordHenry	wrong
+7422|Sikes	9583|Deronda	right
+88	inu.30000035415862|Lucas	9583|Deronda	right
+mdp.39015047606440|Serena	mdp.39015031600409|Carmen	right
+89	10651|Elizabeth	mdp.39015031600409|Carmen	right
+mdp.39015038927201|Faramir	nyp.33433076067192|Tull	wrong
+90	5854|Richard	nyp.33433076067192|Tull	wrong
+11034|Nicholas	inu.30000007060282|Wimsey	wrong
+91	mdp.39015022095585|Casy	inu.30000007060282|Wimsey	wrong
+mdp.39015003625863|Margaret	2655|Sibyl	right
+92	1516|Elinor	2655|Sibyl	right

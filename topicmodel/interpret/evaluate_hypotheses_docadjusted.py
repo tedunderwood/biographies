@@ -130,18 +130,28 @@ for h in hypotheses:
 
     if distraction2 < pair_euclid:
         wrong += 1
-        answers.append([h['hypothesisnum'], h['secondsim'], h['distractor'], 'wrong'])
     else:
         right += 1
-        answers.append([h['hypothesisnum'], h['secondsim'], h['distractor'], 'right'])
 
     if distraction2cos < pair_cos:
         coswrong += 1
+        answers.append([h['hypothesisnum'], h['secondsim'], h['distractor'], 'wrong'])
+    elif distraction2cos == pair_cos:
+        print('error')
+        answers.append([h['hypothesisnum'], h['secondsim'], h['distractor'], 'error'])
     else:
         cosright += 1
+        answers.append([h['hypothesisnum'], h['secondsim'], h['distractor'], 'right'])
 
 print('Euclid: ', right / (wrong + right))
 print('Cosine: ', cosright / (coswrong + cosright))
+
+user = input('Write to file? ')
+if len(user) > 1:
+    outpath = 'answers/' + user + '.tsv'
+    with open(outpath, mode = 'w', encoding = 'utf-8') as f:
+        for a in answers:
+            f.write('\t'.join(a) + '\n')
 
 
 
