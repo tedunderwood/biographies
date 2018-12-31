@@ -103,7 +103,18 @@ Also added 19andchicagoficmeta.csv to /metadata, and VariantSpellings.txt to /le
 
 December 28, 2018
 -----------------
-
-Completed [preregistration for generalized character model.](https://github.com/tedunderwood/biographies/blob/master/preregistration.md)
+#### Ted
+Completed [preregistration for generalized character model.](https://osf.io/my8r7/register/564d31db8c5e4a7c9694b2be)
 
 Began preparing data for topic modeling.
+
+December 31, 2018
+-----------------
+#### Ted
+Generated eight initial fiction models (with and without dialogue), and tested evaluation scripts that compared raw topic vectors, or vectors adjusted relative to document centroids, author centroids, period centroids, and overall centroids.
+
+The best-performing approach was to normalize relative to document centroids when comparing characters from the same book; otherwise, use raw vectors. This topped out at 81.5% accuracy. A naive approach that simply used raw vectors topped out at 76% accuracy. The fic200 model, with 200 topics and including dialogue, was the best-performing topic model.
+
+Now to compare biographies.
+
+
