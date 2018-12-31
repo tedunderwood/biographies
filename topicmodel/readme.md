@@ -9,6 +9,10 @@ dataprep => MALLET => interpretation
 
 Significant choices can be made at each stage.
 
+**Data:** The raw data for this project is too big for a github repo and will have to be added later; even the full doc-topic matrices are too big. But we can run most of the interpretation and evaluation for the project using a reduced subset of the doc-topic matrix that contains only characters in volumes mentioned in [```hypotheses.tsv```](https://github.com/tedunderwood/biographies/tree/master/evaluation).
+
+We do that reduction using ```interpret/condense_doctopics.py```. This script converts the full doctopics file produced by MALLET, into a reduced form that ends "_vols.tsv." These reduced subsets are what you will find in the data directories described below.
+
 dataprep
 --------
 
@@ -31,3 +35,7 @@ A model using only fiction, prepared without any stopwording, and divided into 5
 fic100
 -------
 A model using only fiction, prepared without any stopwording, and divided into 100 topics.
+
+fic200
+-------
+A model using only fiction, prepared without any stopwording, and divided into 200 topics.
