@@ -130,14 +130,14 @@ for idx, h in enumerate(hypotheses):
 
     if distraction1 < pair_euclid:
         wrong += 1
-        answers.append([h['firstsim'], h['distractor'], 'wrong'])
     else:
         right += 1
-        answers.append([h['firstsim'], h['distractor'], 'right'])
 
     if distraction1cos < pair_cos:
         coswrong += 1
+        answers.append([h['hypothesisnum'], h['secondsim'], h['firstsim'], h['distractor'], 'wrong'])
     else:
+        answers.append([h['hypothesisnum'], h['secondsim'], h['firstsim'], h['distractor'], 'right'])
         cosright += 1
 
     # second comparison
@@ -147,21 +147,26 @@ for idx, h in enumerate(hypotheses):
 
     if distraction2 < pair_euclid:
         wrong += 1
-        answers.append([idx, h['secondsim'], h['distractor'], 'wrong'])
     else:
         right += 1
-        answers.append([idx, h['secondsim'], h['distractor'], 'right'])
 
     if distraction2cos < pair_cos:
         coswrong += 1
+        answers.append([h['hypothesisnum'], h['firstsim'], h['secondsim'], h['distractor'], 'wrong'])
     else:
         cosright += 1
+        answers.append([h['hypothesisnum'], h['firstsim'], h['secondsim'], h['distractor'], 'right'])
 
 print('Euclid: ', right / (wrong + right))
 print('Cosine: ', cosright / (coswrong + cosright))
 
-
-
+user = input('Write to file? ')
+if len(user) > 1:
+    outpath = 'answers/' + user + '.tsv'
+    with open(outpath, mode = 'w', encoding = 'utf-8') as f:
+        f.write('index\tcomparand\thinge\tdistractor\tanswer\n')
+        for a in answers:
+            f.write('\t'.join(a) + '\n')
 
 
 
