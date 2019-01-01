@@ -14,3 +14,16 @@ This was produced by scrape_json.py in [the DataMunging/HathiMetadata repo,](htt
 **alreadyhavebio.txt** is a list of the volumes actually present on the cluster in /chardata.
 
 **balanced_character_subset.csv** lists volumes used for modeling, contained on the cluster in character_subset.
+
+returning to update in Jan 2019
+-------------------------------
+
+**merged_bio_meta.tsv** seems to be the most complete and integrated biography metadata I have
+
+**allparsedbio.tsv** is a subset of the above file, created by first scraping all the docids from ```../data/all_post23bio_Sep11.tsv``` and ```../data/all_pre23bio_new.tsv```. Then we used those docids to subset merged_bio:
+
+    havemeta = meta.loc[havebio, : ]
+    meta = havemeta[~havemeta.index.duplicated(keep = 'first')]
+    meta.to_csv('/Users/tunder/Dropbox/python/biographies/metadata/allparsedbio.tsv', sep = '\t', index_label = 'docid')
+
+Not sure why it was necessary to drop duplicates. Deserves investigation.
