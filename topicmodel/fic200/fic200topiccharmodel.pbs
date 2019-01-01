@@ -1,0 +1,9 @@
+#!/bin/bash
+#PBS -l walltime=24:00:00
+#PBS -l nodes=1:ppn=20
+#PBS -N fic200topic
+#PBS -q ichass
+#PBS -m be
+cd $PBS_O_WORKDIR
+module load java/1.8
+bin/mallet train-topics --input ../code/chartopics/data/basicficchars.mallet --num-threads 18 --num-topics 200 --num-iterations 2500 --num-top-words 80 --random-seed 99 --optimize-interval 25 --optimize-burn-in 150 --output-state ../code/chartopics/fic200/modelstate.gz --output-doc-topics ../code/chartopics/fic200/fic200_doctopics.txt --output-topic-keys ../code/chartopics/fic200/fic200_keys.txt --inferencer-filename ../code/chartopics/fic200/inferencer.bin --show-topics-interval 200
