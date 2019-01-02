@@ -117,4 +117,25 @@ The best-performing approach was to normalize relative to document centroids whe
 
 Now to compare biographies.
 
+Jan 1, 2019
+-----------
+#### Ted
+Thought of adding a character's prominence in a work to the topic vector as an additional variable. Intuitively, it should help. In practice, it often hurt. Certainly it hurt when measured as a fraction of character-words in the volume. With very careful tuning (of magnitude) prominence measured as a z score could sometimes help. *Sometimes.* I think it improved 81.5 to 82.2 or something like that, in one case. But generally it was not helpful, and the tuning could well be overfitting.
+
+Jan 2, 2019
+-----------
+#### Ted
+Tested the new "biographies" models, where the novels used in our preregistered hypotheses are mixed with about 18,000 biographies (instead of fiction) and topic-modeled. I also developed a word-frequency model as a baseline, to give us some sense of how much difference topic modeling is making.
+
+The results, using "smart_evaluate.py":
+
+    wordfreq 73.9
+    bio200 78.8
+    fic200 81.5
+
+That suggests fic-specific patterns are making a relatively small difference. Much of the gain of topic modeling is powered by general social/thematic associations. Using compare_answers we can also see that the gains, as we move from bio models to fic models, come especially in hypotheses founded on structural or formal similarities between works, rather than social similarities between imagined people. The latter are captured adequately by a model of biographies.
+
+Of course, there is a large aspect of character that none of these spaces are representing--a dimension that might require relational thinking rather than bag-of-words modeling.
+
+
 
