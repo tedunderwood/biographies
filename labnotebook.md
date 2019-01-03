@@ -137,5 +137,10 @@ That suggests fic-specific patterns are making a relatively small difference. Mu
 
 Of course, there is a large aspect of character that none of these spaces are representing--a dimension that might require relational thinking rather than bag-of-words modeling.
 
+Jan 3, 2019
+-----------
+
+Tried mixing bio and fic at roughly 50/50 ratio. Also tried implementing "Authorless Topic Models," Thompson and Mimno 2018. Neither of those strategies improved accuracy; in fact, they both significantly hurt. My inference is that quirks of authorial diction may be important as genre signals. However, I tried both strategies at the 200-topic level, and it's possible they would benefit from more or fewer topics, so I'll try that.
+
 
 
