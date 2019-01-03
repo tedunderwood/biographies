@@ -59,3 +59,11 @@ A model using only fiction *without dialogue* and divided into 200 topics.
 ficnospeech300
 --------------
 A model using only fiction *without dialogue* and divided into 300 topics.
+
+bio100, 200, 300
+---------------
+Models using only biography, except for selected fiction volumes needed to evaluate hypotheses.
+
+authorless
+----------
+A model prepared using the methods in "Authorless Topic Models," Thompson & Mimno 2018. T was set at .05.
