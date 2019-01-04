@@ -142,5 +142,13 @@ Jan 3, 2019
 
 Tried mixing bio and fic at roughly 50/50 ratio. Also tried implementing "Authorless Topic Models," Thompson and Mimno 2018. Neither of those strategies improved accuracy; in fact, they both significantly hurt. My inference is that quirks of authorial diction may be important as genre signals. However, I tried both strategies at the 200-topic level, and it's possible they would benefit from more or fewer topics, so I'll try that.
 
+Jan 4, 2019
+-----------
 
+Have grudgingly abandoned all the seeming improvements made since Dec 31. Specifically, this strategy mentioned on Dec 31 is not fair: "normalize relative to document centroids when comparing characters from the same book; otherwise, use raw vectors."
+
+Alas, the problem is that comparisons from the same book are always *tests* in my list of hypotheses. They'
+re meant to be rejected. Normalizing relative to centroids increases cosines; intuitively, it creates some negative values in the vector and widens the "angles." So doing that systematically increases distances, and doing it only for comparisons meant to be rejected ... is a set-up.
+
+New version of smart-evaluate applies a fairer strategy and gets no improvement. So we're back to the foul rag and bone shop where we started.
 

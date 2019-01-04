@@ -80,13 +80,35 @@ right = 0
 wrong = 0
 answers = []
 
-def smart_cosine(char1, char2):
-    global charsrelative2docs, meta, charsrelative2auths, charsrelative2years, charsrelative2world, rawchars
+def checksame(hypothesis):
+    '''
+    If two of the characters have the same docid,
+    this returns True.
+    '''
+    c1 = hypothesis['firstsim']
+    c2 = hypothesis['secondsim']
+    c3 = hypothesis['distractor']
 
-    doc1 = getdoc(char1)
-    doc2 = getdoc(char2)
+    doc1 = getdoc(c1)
+    doc2 = getdoc(c2)
+    doc3 = getdoc(c3)
 
     if doc1 == doc2:
+        return True
+    elif doc2 == doc3:
+        return True
+    elif doc3 == doc1:
+        return True
+    else:
+        return False
+
+def smart_cosine(char1, char2, flagsame):
+    global charsrelative2docs, meta, rawchars
+
+    #doc1 = getdoc(char1)
+    #doc2 = getdoc(char2)
+
+    if flagsame:
         vec1 = charsrelative2docs[char1]
         vec2 = charsrelative2docs[char2]
 
@@ -96,13 +118,22 @@ def smart_cosine(char1, char2):
 
     return cosine(vec1, vec2)
 
+def fair_cosine(char1, char2):
+    global charsrelative2docs, meta, rawchars
+
+    vec1 = np.append(charsrelative2docs[char1] * 1.2, rawchars[char1])
+    vec2 = np.append(charsrelative2docs[char2] * 1.2, rawchars[char2])
+
+    return cosine(vec1, vec2)
+
 for h in hypotheses:
 
-    pair_cos = smart_cosine(h['firstsim'], h['secondsim'])
+    samedocs = checksame(h)
+    pair_cos = smart_cosine(h['firstsim'], h['secondsim'], samedocs)
 
     # first comparison
 
-    distraction1cos = smart_cosine(h['firstsim'], h['distractor'])
+    distraction1cos = smart_cosine(h['firstsim'], h['distractor'], samedocs)
 
     if distraction1cos < pair_cos:
         wrong += 1
@@ -113,7 +144,7 @@ for h in hypotheses:
 
     # second comparison
 
-    distraction2cos = smart_cosine(h['secondsim'], h['distractor'])
+    distraction2cos = smart_cosine(h['secondsim'], h['distractor'], samedocs)
 
     if distraction2cos < pair_cos:
         wrong += 1
