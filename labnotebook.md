@@ -152,3 +152,7 @@ re meant to be rejected. Normalizing relative to centroids increases cosines; in
 
 New version of smart-evaluate applies a fairer strategy and gets no improvement. So we're back to the foul rag and bone shop where we started.
 
+Jan 10, 2019
+-------------
+
+Breakthrough. Wrote [a new topic-modeling algorithm](https://github.com/tedunderwood/roles) that allows for the emergence of book-level "themes" alongside character-level "roles." Even on a first, untuned run, this is displaying dramatically better performance (77-78% accuracy).

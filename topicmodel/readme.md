@@ -67,3 +67,7 @@ Models using only biography, except for selected fiction volumes needed to evalu
 authorless
 ----------
 A model prepared using the methods in "Authorless Topic Models," Thompson & Mimno 2018. T was set at .05.
+
+roletheme
+----------
+Models created by [a new topic-modeling algorithm that allows for the emergence of book-level 'themes' alongside character-level 'roles'](https://github.com/tedunderwood/roles). See the linked repo for the script responsible.
