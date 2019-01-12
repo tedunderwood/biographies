@@ -32,7 +32,7 @@ args = sys.argv
 
 doctopic_path = args[1]
 themect = input("How many themes? ")
-outpath = doctopic_path.replace('_doctopic.tsv', '_' + str(themect) + 'themes.tsv')
+outpath = doctopic_path.replace('_doctopics.tsv', '_' + str(themect) + 'themes.tsv')
 print(outpath)
 
 if os.path.isfile(outpath):
