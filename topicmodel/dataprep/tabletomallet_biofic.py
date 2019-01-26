@@ -9,6 +9,7 @@
 # will be present.
 
 import csv, random, sys
+import pandas as pd
 
 # Our general strategy is to take 1000 books from each decade between the 1780s
 # and the 2000s (where 1000 books are available, which they aren't until the 1850s).
@@ -37,11 +38,11 @@ with open('../../metadata/filtered_fiction_plus_18c.tsv', encoding = 'utf-8') as
 randomsample = set()
 
 for floor, available in decades.items():
-    if len(available) < 1000:
+    if len(available) < 500:
         k = len(available)
         print(floor, k)
     else:
-        k = 1000
+        k = 500
     selected = random.sample(available, k)
     randomsample = randomsample.union(selected)
 
@@ -95,7 +96,7 @@ print('Translator for ', len(char_translator))
 sources = ['/Users/tunder/data/character_table_18c19c.tsv',
     '/Users/tunder/data/character_table_post1900.tsv']
 
-malletout = '/Users/tunder/data/malletficchars.txt'
+malletout = '/Users/tunder/data/bioficchars.txt'
 
 errors = 0
 errorset = {}
@@ -144,6 +145,10 @@ for s in sources:
                         f.write(l)
                 lines = []
 
+with open(malletout, mode = 'a', encoding = 'utf-8') as f:
+    for l in lines:
+        f.write(l)
+
 for anid in to_supplement:
     outline = ' '.join([anid, labelholding[anid], ' '.join(wordholding[anid])]) + '\n'
     special_lines.append(outline)
@@ -154,7 +159,62 @@ with open(malletout, mode = 'a', encoding = 'utf-8') as f:
 
 print("Total volumes: ", len(randomsample) + len(specialids))
 
+print()
+print('Starting to get biographies.')
 
+biosources = ['../../data/all_post23bio_Sep11.tsv',
+    '../../data/all_pre23bio_new.tsv']
+
+biometa = pd.read_csv('../../metadata/allparsedbio.tsv', sep = '\t', index_col = 'docid')
+
+def getdecade(date):
+    return 10 * (date // 10)
+
+biometa = biometa.assign(decade = biometa.inferreddate.map(getdecade))
+
+decadegrouping = biometa.groupby('decade')
+biosample = set()
+
+for dec, group in decadegrouping:
+    if dec < 1780 or dec > 2000:
+        continue
+
+    available = group.index.tolist()
+
+    if len(available) < 500:
+        k = len(available)
+        print(floor, k)
+    else:
+        k = 500
+    selected = random.sample(available, k)
+    biosample = biosample.union(selected)
+
+lines = []
+
+for s in biosources:
+    with open(s, encoding = 'utf-8') as f:
+        for line in f:
+            fields = line.strip().split('\t')
+            docid = fields[0]
+            if docid in biosample:
+                charid = fields[2]
+                date = fields[5]
+                gender = fields[3]
+                words = fields[6]
+                label = 'bio' + date + gender
+
+                outline = ' '.join([charid, label, words]) + '\n'
+                lines.append(outline)
+
+            if len(lines) > 1000:
+                with open(malletout, mode = 'a', encoding = 'utf-8') as f:
+                    for l in lines:
+                        f.write(l)
+                lines = []
+
+with open(malletout, mode = 'a', encoding = 'utf-8') as f:
+    for l in lines:
+        f.write(l)
 
 
 
