@@ -101,18 +101,18 @@ def charlengths(jsonstring):
 def getfolder(folder, outlines):
 
     sourcefiles = [x for x in os.listdir(folder) if x.endswith('.book')]
-        # the data files produced by BookNLP all end with '.book'
-        for sf in sourcefiles:
-            path = os.path.join(folder, sf)
-            with open(path, encoding = 'utf-8') as f:
-                jsonstring = f.read()
+    # the data files produced by BookNLP all end with '.book'
+    for sf in sourcefiles:
+        path = os.path.join(folder, sf)
+        with open(path, encoding = 'utf-8') as f:
+            jsonstring = f.read()
 
-            expectedid = sf.replace('.book', '')
-            storyid, charsizes, dialsizes, chargenders = charlengths(jsonstring)
+        expectedid = sf.replace('.book', '')
+        storyid, charsizes, dialsizes, chargenders = charlengths(jsonstring)
 
-            for size, dial, g in zip(charsizes, dialsizes, chargenders):
-                outline = '\t'.joinc([storyid, str(size), str(dial), g]) + '\n'
-                outlines.append(outline)
+        for size, dial, g in zip(charsizes, dialsizes, chargenders):
+            outline = '\t'.joinc([storyid, str(size), str(dial), g]) + '\n'
+            outlines.append(outline)
     return outlines
 
 ## MAIN EXECUTION BEGINS HERE
