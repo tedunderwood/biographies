@@ -58,6 +58,8 @@ def charlengths(jsonstring):
 
     for character in characterlist:
 
+        print(character)
+
         gender = character["g"]
         if gender == 1:
             genderstring = "f"
