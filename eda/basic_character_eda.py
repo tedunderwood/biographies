@@ -117,7 +117,7 @@ def getfolder(folder, outlines):
         storyid, charsizes, dialsizes, chargenders = charlengths(jsonstring)
 
         for size, dial, g in zip(charsizes, dialsizes, chargenders):
-            outline = '\t'.joinc([storyid, str(size), str(dial), g]) + '\n'
+            outline = '\t'.join([storyid, str(size), str(dial), g]) + '\n'
             outlines.append(outline)
     return outlines
 
@@ -161,7 +161,7 @@ elif datasource == 'fic':
                 storyid, charsizes, dialsizes, chargenders = charlengths(jsonstring)
 
                 for size, dial, g in zip(charsizes, dialsizes, chargenders):
-                    outline = '\t'.joinc([storyid, str(size), str(dial), g]) + '\n'
+                    outline = '\t'.join([storyid, str(size), str(dial), g]) + '\n'
                     outlines.append(outline)
 else:
     print("Usage for basic_character_eda is either:")
