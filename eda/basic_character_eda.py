@@ -88,7 +88,11 @@ def charlengths(jsonstring):
         dialogue = []
 
         for spoken in character["speaking"]:
-            wlist = spoken['w'].lower().split()
+            if type(spoken) == str:
+                wlist = spoken.lower().split()
+            else:
+                wlist = spoken['w'].lower().split()
+                
             for w in wlist:
                 if w in stopwords:
                     continue
