@@ -13,22 +13,16 @@ import ujson, csv, sys, os
 
 def add_dicts_to_list(alistofdicts, alist, prefix):
 
-    if type(alistofdicts) == list:
-        for word in alistofdicts:
+    for word in alistofdicts:
+        if type(word) == str:
             wordval = word.lower()
-            if len(prefix) > 1:
-                wordval = prefix + '-' + wordval
-
-            alist.append(wordval)
-    else:
-
-        for word in alistofdicts:
+        else:
             wordval = word["w"].lower()
 
-            if len(prefix) > 1:
-                wordval = prefix + '-' + wordval
+        if len(prefix) > 1:
+            wordval = prefix + '-' + wordval
 
-            alist.append(wordval)
+        alist.append(wordval)
 
     return alist
 
@@ -92,7 +86,7 @@ def charlengths(jsonstring):
                 wlist = spoken.lower().split()
             else:
                 wlist = spoken['w'].lower().split()
-                
+
             for w in wlist:
                 if w in stopwords:
                     continue
