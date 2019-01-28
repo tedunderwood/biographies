@@ -141,11 +141,7 @@ elif datasource == 'fic':
 
     outlines = []
 
-    for folder in datafolders:
-        print(folder)
-        outlines = getfolder(folder, outlines)
-
-    datafiles = ['/projects/ischoolichass/ichass/usesofscale/chardata/pre1923fic/20thc_characters.json',
+    datafiles = ['/projects/ischoolichass/ichass/usesofscale/chardata/pre1923fic/20thc_characters1.json',
     '/projects/ischoolichass/ichass/usesofscale/chardata/pre1923fic/20thc_characters2.json',
     '/projects/ischoolichass/ichass/usesofscale/chardata/pre1923fic/20thc_characters3.json',
     '/projects/ischoolichass/ichass/usesofscale/chardata/pre1923fic/pre1900chars.json']
@@ -153,6 +149,7 @@ elif datasource == 'fic':
     for dfile in datafiles:
         assert os.path.isfile(dfile)
         # otherwise we have an error
+        print(dfile)
 
         with open(dfile, encoding = 'utf-8') as f:
             for jsonstring in f:
@@ -161,6 +158,11 @@ elif datasource == 'fic':
                 for size, dial, g in zip(charsizes, dialsizes, chargenders):
                     outline = '\t'.join([storyid, str(size), str(dial), g]) + '\n'
                     outlines.append(outline)
+                    
+    for folder in datafolders:
+        print(folder)
+        outlines = getfolder(folder, outlines)
+
 else:
     print("Usage for basic_character_eda is either:")
     print("python basic_character_eda.py fic outfile")
