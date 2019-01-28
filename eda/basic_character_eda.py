@@ -129,7 +129,7 @@ if datasource == 'bio':
 
     for folder in datafolders:
         print(folder)
-        outlines = getfolder(folder. outlines)
+        outlines = getfolder(folder, outlines)
 
 elif datasource == 'fic':
 
