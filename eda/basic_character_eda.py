@@ -16,12 +16,12 @@ def add_dicts_to_list(alistofdicts, alist, prefix):
     if type(alistofdicts) == list:
         for word in alistofdicts:
             wordval = word.lower()
-        if len(prefix) > 1:
-            wordval = prefix + '-' + wordval
+            if len(prefix) > 1:
+                wordval = prefix + '-' + wordval
 
-        alist.append(wordval)
+            alist.append(wordval)
     else:
-        
+
         for word in alistofdicts:
             wordval = word["w"].lower()
 
@@ -66,8 +66,6 @@ def charlengths(jsonstring):
     characterlist = jsonobject["characters"]
 
     for character in characterlist:
-
-        print(character)
 
         gender = character["g"]
         if gender == 1:
