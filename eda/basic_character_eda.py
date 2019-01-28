@@ -12,12 +12,9 @@
 import ujson, csv, sys, os
 
 def add_dicts_to_list(alistofdicts, alist, prefix):
-    global variants
 
     for word in alistofdicts:
         wordval = word["w"].lower()
-        if wordval in variants:
-            wordval = variants[wordval]
 
         if len(prefix) > 1:
             wordval = prefix + '-' + wordval
