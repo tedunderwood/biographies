@@ -78,6 +78,8 @@ significant_authors = set()
 
 with open(doctopic_path, encoding = 'utf-8') as f:
     for line in f:
+        if line.startswith('#'):
+            continue
         fields = line.strip().split('\t')
         charid = fields[1]
         docid = getdoc(charid)
