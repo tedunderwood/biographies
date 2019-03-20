@@ -32,12 +32,13 @@ if not os.path.isdir(outroot):
 # CONDENSE DOCTOPIC FILES
 
 for i in range(12):
-	inpath = outroot + modelname + '_mcmc' + str(i) + '_doctopics.tsv'
+	inpath = inroot + modelname + '_mcmc' + str(i) + '_doctopics.tsv'
 	outpath = outroot + modelname + '_mcmc' + str(i) + '_rolethemes.tsv'
 
 	if os.path.isfile(outpath):
 		continue
 	else:
+		print("Condense: " + str(i))
 		autocondense.condense_a_file(inpath, outpath, themecount)
 
 
