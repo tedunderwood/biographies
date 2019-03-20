@@ -26,6 +26,9 @@ themecount = int(args[2])
 inroot = '/projects/ischoolichass/ichass/usesofscale/code/roles/'
 outroot = '../' + modelname + '_mcmc/'
 
+if not os.path.isdir(outroot):
+	os.mkdir(outroot)
+
 # CONDENSE DOCTOPIC FILES
 
 for i in range(12):
