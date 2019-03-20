@@ -17,6 +17,7 @@ import numpy as np
 import pandas as pd
 
 import autocondense_rolethemes as autocondense
+import autoevaluate_hypotheses as evaluate 
 
 args = sys.argv
 
@@ -40,5 +41,10 @@ for i in range(12):
 	else:
 		print("Condense: " + str(i))
 		autocondense.condense_a_file(inpath, outpath, themecount)
+
+for i in range(12):
+	inpath = outroot + modelname + '_mcmc' + str(i) + '_rolethemes.tsv'
+	evaluate.evaluate_a_model(inpath)
+
 
 

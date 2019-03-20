@@ -25,7 +25,7 @@ def getdoc(anid):
 
     return thedoc
 
-def evaluate(doctopic_path):
+def evaluate_a_model(doctopic_path):
 
     hypotheses = []
     significant_persons = set()
