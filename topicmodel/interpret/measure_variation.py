@@ -3,7 +3,7 @@
 # This script is designed to automate the process of condensing multiple models
 # and testing them against pre-registered hypotheses.
 
-# We start with a modelname (arg1). We expect to find 12 doctopics files 
+# We start with a modelname (arg1). We expect to find 12 doctopics files
 # associated with that model. Each of those files will be
 # condensed into a roletheme file and stored in a folder associated
 # with the modelname. In doing this, we will also need to know
@@ -17,7 +17,8 @@ import numpy as np
 import pandas as pd
 
 import autocondense_rolethemes as autocondense
-import autoevaluate_hypotheses as evaluate 
+import autoevaluate_hypotheses as evaluate
+import autosmartevaluate_rolethemes as smartevaluate
 
 args = sys.argv
 
@@ -38,13 +39,25 @@ for i in range(12):
 
 	if os.path.isfile(outpath):
 		continue
+	elif not os.path.isfile(inpath):
+		break
 	else:
 		print("Condense: " + str(i))
 		autocondense.condense_a_file(inpath, outpath, themecount)
 
-for i in range(12):
+ceiling = i + 1
+
+# That's the number of files we found
+
+for i in range(ceiling):
 	inpath = outroot + modelname + '_mcmc' + str(i) + '_rolethemes.tsv'
 	evaluate.evaluate_a_model(inpath)
+
+print()
+
+for i in range(ceiling):
+	inpath = outroot + modelname + '_mcmc' + str(i) + '_rolethemes.tsv'
+	smartevaluate.smarteval_a_model(inpath, themecount)
 
 
 
