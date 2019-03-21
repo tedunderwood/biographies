@@ -36,8 +36,7 @@ with open('../../evaluation/hypotheses.tsv', encoding = 'utf-8') as f:
             significant_persons.add(anid)
         hypotheses.append(row)
 
-def smart_cosine(char1, char2):
-    global charsrelative2docs, meta, rawchars
+def smart_cosine(char1, char2, charsrelative2docs, rawchars):
 
     doc1 = getdoc(char1)
     doc2 = getdoc(char2)
@@ -83,11 +82,11 @@ def smarteval_a_model(doctopicpath, numthemes):
 
     for h in hypotheses:
 
-        pair_cos = smart_cosine(h['firstsim'], h['secondsim'])
+        pair_cos = smart_cosine(h['firstsim'], h['secondsim'], charsrelative2docs, rawchars)
 
         # first comparison
 
-        distraction1cos = smart_cosine(h['firstsim'], h['distractor'])
+        distraction1cos = smart_cosine(h['firstsim'], h['distractor'], charsrelative2docs, rawchars)
 
         if distraction1cos < pair_cos:
             wrong += 1
@@ -98,7 +97,7 @@ def smarteval_a_model(doctopicpath, numthemes):
 
         # second comparison
 
-        distraction2cos = smart_cosine(h['secondsim'], h['distractor'])
+        distraction2cos = smart_cosine(h['secondsim'], h['distractor'], charsrelative2docs, rawchars)
 
         if distraction2cos < pair_cos:
             wrong += 1
