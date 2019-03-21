@@ -8,7 +8,8 @@
 
 import sys, csv
 import numpy as np
-from scipy.spatial.distance import euclidean, cosine
+from scipy.spatial.distance import cosine
+from collections import Counter
 
 def getdoc(anid):
     '''
@@ -24,6 +25,25 @@ def getdoc(anid):
         thedoc = anid
 
     return thedoc
+
+def understand_why(selfcomp, social, structural, hypidx, whethercorrect):
+        if hypidx <= 6:
+            selfcomp[whethercorrect] += 1
+        if hypidx >= 7 and hypidx <= 46:
+            structural[whethercorrect] += 1
+        elif hypidx >= 47 and hypidx <= 56:
+            social[whethercorrect] += 1
+        elif hypidx >= 57 and hypidx <= 73:
+            structural[whethercorrect] += 1
+        elif hypidx >= 74 and hypidx <= 84:
+            social[whethercorrect] += 1
+        elif hypidx == 85 or hypidx == 86:
+            structural[whethercorrect] += 1
+        elif hypidx >= 87 and hypidx <= 92:
+            social[whethercorrect] += 1
+        elif hypidx >= 93:
+            selfcomp[whethercorrect] += 1
+
 
 def evaluate_a_model(doctopic_path):
 
@@ -61,6 +81,9 @@ def evaluate_a_model(doctopic_path):
     right = 0
     wrong = 0
     answers = []
+    social = Counter()
+    structural = Counter()
+    selfcomp = Counter()
 
     for idx, h in enumerate(hypotheses):
 
@@ -70,6 +93,7 @@ def evaluate_a_model(doctopic_path):
         first = chardict[h['firstsim']]
         second = chardict[h['secondsim']]
         distract = chardict[h['distractor']]
+        hypothesisnum = h['hypothesisnum']
 
         pair_cos = cosine(first, second)
 
@@ -79,13 +103,14 @@ def evaluate_a_model(doctopic_path):
 
         if distraction1cos < pair_cos:
             wrong += 1
-            answers.append([h['hypothesisnum'], h['secondsim'], h['firstsim'], h['distractor'], 'wrong'])
+            understand_why(selfcomp, social, structural, hypothesisnum, 'wrong')
+
         elif distraction1cos == pair_cos:
             print('error')
-            answers.append([h['hypothesisnum'], h['secondsim'], h['firstsim'], h['distractor'], 'error'])
+
         else:
-            answers.append([h['hypothesisnum'], h['secondsim'], h['firstsim'], h['distractor'], 'right'])
             right += 1
+            understand_why(selfcomp, social, structural, hypothesisnum, 'right')
 
         # second comparison
 
@@ -93,23 +118,24 @@ def evaluate_a_model(doctopic_path):
 
         if distraction2cos < pair_cos:
             wrong += 1
-            answers.append([h['hypothesisnum'], h['firstsim'], h['secondsim'], h['distractor'], 'wrong'])
+            understand_why(selfcomp, social, structural, hypothesisnum, 'wrong')
+
         elif distraction2cos == pair_cos:
             print('error')
-            answers.append([h['hypothesisnum'], h['firstsim'], h['secondsim'], h['distractor'], 'error'])
+
         else:
             right += 1
-            answers.append([h['hypothesisnum'], h['firstsim'], h['secondsim'], h['distractor'], 'right'])
+            understand_why(selfcomp, social, structural, hypothesisnum, 'right')
+
 
     print('Cosine: ', right / (wrong + right))
 
-    # user = input('Write to file? ')
-    # if len(user) > 1:
-    #     outpath = 'answers/' + user + '.tsv'
-    #     with open(outpath, mode = 'w', encoding = 'utf-8') as f:
-    #         f.write('index\tcomparand\thinge\tdistractor\tanswer\n')
-    #         for a in answers:
-    #             f.write('\t'.join(a) + '\n')
+    total = right / (wrong + right)
+    selftotal = selfcomp['right'] / (selfcomp['wrong'] + selfcomp['right'])
+    soctotal = social['right'] / (social['wrong'] + social['right'])
+    structotal = structural['right'] / (structural['wrong'] + structural['right'])
+
+    return total, selftotal, soctotal, structotal
 
 
 

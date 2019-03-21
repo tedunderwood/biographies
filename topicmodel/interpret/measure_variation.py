@@ -31,6 +31,13 @@ outroot = '../' + modelname + '_mcmc/'
 if not os.path.isdir(outroot):
 	os.mkdir(outroot)
 
+outfields = ['model', 'iteration', 'basetotal', 'baseself', 'basesocial',
+	'basestructural', 'smarttotal', 'smartself', 'smartsocial', 'smartstructural']
+
+if not os.path.isfile('variations.tsv'):
+	with open('variations.tsv', mode = 'w', encoding = 'utf-8') as f:
+		f.write('\t'.join(outfields) + '\n')
+
 # CONDENSE DOCTOPIC FILES
 
 for i in range(12):
@@ -49,15 +56,24 @@ ceiling = i + 1
 
 # That's the number of files we found
 
+rows = dict()
+
 for i in range(ceiling):
 	inpath = outroot + modelname + '_mcmc' + str(i) + '_rolethemes.tsv'
-	evaluate.evaluate_a_model(inpath)
+	rows[i] = dict()
+	rows[i]['basetotal'], rows[i]['baseself'], rows[i]['basesocial'], rows[i]['basestructural'] = evaluate.evaluate_a_model(inpath)
 
 print()
 
 for i in range(ceiling):
 	inpath = outroot + modelname + '_mcmc' + str(i) + '_rolethemes.tsv'
-	smartevaluate.smarteval_a_model(inpath, themecount)
+	rows[i]['smarttotal'], rows[i]['smartself'], rows[i]['smartsocial'], rows[i]['smartstructural'] = smartevaluate.smarteval_a_model(inpath, themecount)
 
-
+with open('variations.tsv', mode = 'a', encoding = 'utf-8') as f:
+	scribe = csv.DictWriter(f, fieldnames = outfields, delimiter = '\t')
+	for i in range(ceiling):
+		rows[i]['iteration'] = i
+		rows[i]['model'] = modelname
+		scribe.writerow(rows[i])
+		
 

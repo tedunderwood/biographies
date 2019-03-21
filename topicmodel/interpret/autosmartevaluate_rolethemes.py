@@ -9,6 +9,7 @@ import sys, csv, random
 import numpy as np
 import pandas as pd
 from scipy.spatial.distance import cosine
+from collections import Counter
 
 def getdoc(anid):
     '''
@@ -22,6 +23,24 @@ def getdoc(anid):
         thedoc = anid
 
     return thedoc
+
+def understand_why(selfcomp, social, structural, hypidx, whethercorrect):
+        if hypidx <= 6:
+            selfcomp[whethercorrect] += 1
+        if hypidx >= 7 and hypidx <= 46:
+            structural[whethercorrect] += 1
+        elif hypidx >= 47 and hypidx <= 56:
+            social[whethercorrect] += 1
+        elif hypidx >= 57 and hypidx <= 73:
+            structural[whethercorrect] += 1
+        elif hypidx >= 74 and hypidx <= 84:
+            social[whethercorrect] += 1
+        elif hypidx == 85 or hypidx == 86:
+            structural[whethercorrect] += 1
+        elif hypidx >= 87 and hypidx <= 92:
+            social[whethercorrect] += 1
+        elif hypidx >= 93:
+            selfcomp[whethercorrect] += 1
 
 hypotheses = []
 significant_persons = set()
@@ -80,6 +99,10 @@ def smarteval_a_model(doctopicpath, numthemes):
     wrong = 0
     answers = []
 
+    selfcomp = Counter()
+    social = Counter()
+    structural = Counter()
+
     for h in hypotheses:
 
         pair_cos = smart_cosine(h['firstsim'], h['secondsim'], charsrelative2docs, rawchars)
@@ -90,9 +113,9 @@ def smarteval_a_model(doctopicpath, numthemes):
 
         if distraction1cos < pair_cos:
             wrong += 1
-            answers.append([h['hypothesisnum'], h['secondsim'], h['firstsim'], h['distractor'], 'wrong'])
+            understand_why(selfcomp, social, structural, hypothesisnum, 'wrong')
         else:
-            answers.append([h['hypothesisnum'], h['secondsim'], h['firstsim'], h['distractor'], 'right'])
+            understand_why(selfcomp, social, structural, hypothesisnum, 'right')
             right += 1
 
         # second comparison
@@ -101,20 +124,14 @@ def smarteval_a_model(doctopicpath, numthemes):
 
         if distraction2cos < pair_cos:
             wrong += 1
-            answers.append([h['hypothesisnum'], h['firstsim'], h['secondsim'], h['distractor'], 'wrong'])
+            understand_why(selfcomp, social, structural, hypothesisnum, 'wrong')
         else:
             right += 1
-            answers.append([h['hypothesisnum'], h['firstsim'], h['secondsim'], h['distractor'], 'right'])
+            understand_why(selfcomp, social, structural, hypothesisnum, 'right')
 
     print('Smart cosine: ', right / (wrong + right))
 
-    # user = input('Write to file? ')
-    # if len(user) > 1:
-    #     outpath = 'answers/' + user + '.tsv'
-    #     with open(outpath, mode = 'w', encoding = 'utf-8') as f:
-    #         f.write('index\tcomparand\thinge\tdistractor\tanswer\n')
-    #         for a in answers:
-    #             f.write('\t'.join(a) + '\n')
+    return total, selftotal, soctotal, structotal
 
 
 
