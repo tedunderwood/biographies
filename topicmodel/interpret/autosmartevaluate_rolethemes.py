@@ -141,6 +141,11 @@ def smarteval_a_model(doctopicpath, numthemes):
             understand_why(selfcomp, social, structural, hypothesisnum, 'right')
 
     print('Smart cosine: ', right / (wrong + right))
+    
+    total = right / (wrong + right)
+    selftotal = selfcomp['right'] / (selfcomp['wrong'] + selfcomp['right'])
+    soctotal = social['right'] / (social['wrong'] + social['right'])
+    structotal = structural['right'] / (structural['wrong'] + structural['right'])
 
     return total, selftotal, soctotal, structotal
 
