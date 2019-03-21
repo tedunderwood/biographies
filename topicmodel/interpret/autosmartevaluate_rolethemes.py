@@ -114,6 +114,8 @@ def smarteval_a_model(doctopicpath, numthemes):
 
     for h in hypotheses:
 
+        hypothesisnum = h['hypothesisnum']
+
         pair_cos = smart_cosine(h['firstsim'], h['secondsim'], charsrelative2docs, rawchars)
 
         # first comparison
