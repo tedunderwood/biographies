@@ -27,22 +27,32 @@ def getdoc(anid):
     return thedoc
 
 def understand_why(selfcomp, social, structural, hypidx, whethercorrect):
-        if hypidx <= 6:
-            selfcomp[whethercorrect] += 1
-        if hypidx >= 7 and hypidx <= 46:
-            structural[whethercorrect] += 1
-        elif hypidx >= 47 and hypidx <= 56:
-            social[whethercorrect] += 1
-        elif hypidx >= 57 and hypidx <= 73:
-            structural[whethercorrect] += 1
-        elif hypidx >= 74 and hypidx <= 84:
-            social[whethercorrect] += 1
-        elif hypidx == 85 or hypidx == 86:
-            structural[whethercorrect] += 1
-        elif hypidx >= 87 and hypidx <= 92:
-            social[whethercorrect] += 1
-        elif hypidx >= 93:
-            selfcomp[whethercorrect] += 1
+
+    '''
+    We know whether the model got this hypothesis wrong or right.
+    Now, using the hypothesis-index (just its number in the list
+    of hypotheses), we want to assign credit or blame to the relevant
+    class of hypotheses.
+    '''
+    
+    hypidx = int(hypidx)
+    
+    if hypidx <= 6:
+        selfcomp[whethercorrect] += 1
+    if hypidx >= 7 and hypidx <= 46:
+        structural[whethercorrect] += 1
+    elif hypidx >= 47 and hypidx <= 56:
+        social[whethercorrect] += 1
+    elif hypidx >= 57 and hypidx <= 73:
+        structural[whethercorrect] += 1
+    elif hypidx >= 74 and hypidx <= 84:
+        social[whethercorrect] += 1
+    elif hypidx == 85 or hypidx == 86:
+        structural[whethercorrect] += 1
+    elif hypidx >= 87 and hypidx <= 92:
+        social[whethercorrect] += 1
+    elif hypidx >= 93:
+        selfcomp[whethercorrect] += 1
 
 
 def evaluate_a_model(doctopic_path):
