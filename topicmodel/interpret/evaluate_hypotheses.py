@@ -6,6 +6,7 @@
 import sys, csv
 import numpy as np
 from scipy.spatial.distance import euclidean, cosine
+from collections import Counter
 
 def getdoc(anid):
     '''
@@ -22,7 +23,35 @@ def getdoc(anid):
 
     return thedoc
 
-# MAIN starts
+def understand_why(selfcomp, social, structural, hypidx, whethercorrect):
+
+    '''
+    We know whether the model got this hypothesis wrong or right.
+    Now, using the hypothesis-index (just its number in the list
+    of hypotheses), we want to assign credit or blame to the relevant
+    class of hypotheses.
+    '''
+
+    hypidx = int(hypidx)
+
+    if hypidx <= 6:
+        selfcomp[whethercorrect] += 1
+    if hypidx >= 7 and hypidx <= 46:
+        structural[whethercorrect] += 1
+    elif hypidx >= 47 and hypidx <= 56:
+        social[whethercorrect] += 1
+    elif hypidx >= 57 and hypidx <= 73:
+        structural[whethercorrect] += 1
+    elif hypidx >= 74 and hypidx <= 84:
+        social[whethercorrect] += 1
+    elif hypidx == 85 or hypidx == 86:
+        structural[whethercorrect] += 1
+    elif hypidx >= 87 and hypidx <= 92:
+        social[whethercorrect] += 1
+    elif hypidx >= 93:
+        selfcomp[whethercorrect] += 1
+
+# MAIN starts here
 
 args = sys.argv
 
@@ -65,6 +94,10 @@ cosright = 0
 coswrong = 0
 answers = []
 
+social = Counter()
+structural = Counter()
+selfcomp = Counter()
+
 missing = set()
 
 for s in significant_persons:
@@ -77,6 +110,8 @@ for idx, h in enumerate(hypotheses):
 
     skip = False
     ids = [h['firstsim'], h['secondsim'], h['distractor']]
+    hypothesisnum = h['hypothesisnum']
+
     for anid in ids:
         if anid in missing:
             skip = True
@@ -102,12 +137,11 @@ for idx, h in enumerate(hypotheses):
 
     if distraction1cos < pair_cos:
         coswrong += 1
-        answers.append([h['hypothesisnum'], h['secondsim'], h['firstsim'], h['distractor'], 'wrong'])
+        understand_why(selfcomp, social, structural, hypothesisnum, 'wrong')
     elif distraction1cos == pair_cos:
         print('error')
-        answers.append([h['hypothesisnum'], h['secondsim'], h['firstsim'], h['distractor'], 'error'])
     else:
-        answers.append([h['hypothesisnum'], h['secondsim'], h['firstsim'], h['distractor'], 'right'])
+        understand_why(selfcomp, social, structural, hypothesisnum, 'right')
         cosright += 1
 
     # second comparison
@@ -122,24 +156,31 @@ for idx, h in enumerate(hypotheses):
 
     if distraction2cos < pair_cos:
         coswrong += 1
-        answers.append([h['hypothesisnum'], h['firstsim'], h['secondsim'], h['distractor'], 'wrong'])
+        understand_why(selfcomp, social, structural, hypothesisnum, 'wrong')
     elif distraction2cos == pair_cos:
         print('error')
-        answers.append([h['hypothesisnum'], h['firstsim'], h['secondsim'], h['distractor'], 'error'])
     else:
         cosright += 1
-        answers.append([h['hypothesisnum'], h['firstsim'], h['secondsim'], h['distractor'], 'right'])
+        understand_why(selfcomp, social, structural, hypothesisnum, 'right')
 
 print('Euclid: ', right / (wrong + right))
 print('Cosine: ', cosright / (coswrong + cosright))
 
-user = input('Write to file? ')
-if len(user) > 1:
-    outpath = 'answers/' + user + '.tsv'
-    with open(outpath, mode = 'w', encoding = 'utf-8') as f:
-        f.write('index\tcomparand\thinge\tdistractor\tanswer\n')
-        for a in answers:
-            f.write('\t'.join(a) + '\n')
+selftotal = selfcomp['right'] / (selfcomp['wrong'] + selfcomp['right'])
+soctotal = social['right'] / (social['wrong'] + social['right'])
+structotal = structural['right'] / (structural['wrong'] + structural['right'])
+print()
+print('Cosine on self-comparisons: ', selftotal)
+print('Cosine on social comparisons: ', soctotal)
+print('Cosine on structural comparisons: ', structotal)
+
+# user = input('Write to file? ')
+# if len(user) > 1:
+#     outpath = 'answers/' + user + '.tsv'
+#     with open(outpath, mode = 'w', encoding = 'utf-8') as f:
+#         f.write('index\tcomparand\thinge\tdistractor\tanswer\n')
+#         for a in answers:
+#             f.write('\t'.join(a) + '\n')
 
 
 
